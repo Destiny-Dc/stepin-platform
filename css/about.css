@@ -1,0 +1,159 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: blue;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: orange;
+  }
+  .logo span {
+    color: white;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  i{
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    right: 0;
+    background-color: white;
+    border: 1px solid blue;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    width: 180px;
+    flex-direction: column;
+    padding: 0.5rem;
+    z-index: 1000;
+    border-radius: 2rem;
+    border-top-right-radius: 0;
+    top: 1.5rem;
+  }
+  
+  .dropdown-menu li {
+    padding: 0.5rem;
+    list-style: none;
+  }
+  
+  .dropdown-menu li a {
+    color: blue;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Profile Button */
+  .profile button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .profile i {
+    font-size: 1.6rem;
+    color: white;
+  }
+  
+  /* Main Content */
+  .main-about {
+    padding: 2rem;
+    flex: 1;
+  }
+  
+  .about-section {
+    margin-bottom: 2rem;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-left: 5px solid blue;
+    border-radius: 6px;
+  }
+  
+  .about-section h2 {
+    color: blue;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* FOOTER */
+  footer {
+    background: blue;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  footer .socials i {
+    margin: 0 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  footer .socials i:hover {
+    color: orange;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+    .dropdown-menu {
+      right: 0;
+      left: auto;
+      top: 1.5rem;
+      border-radius: 2rem;
+      border-top-right-radius: 0;
+    }
+    .main-about {
+      padding: 1rem;
+    }
+  }
+  

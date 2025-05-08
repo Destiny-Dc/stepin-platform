@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - StepIn</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="main-content">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="admin-logo">Step<span>In</span></div>
+            <div class="header-right">
+            <div class="profile">
+                <a href="/html/profile.html"><i class='bx bx-user'></i></a>
+            </div>
+            <div class="profile" id="profileBtn"> 
+                <i class='bx bx-menu'></i>
+                <div class="menu-dropdown" id="menuDropdown">
+                    <ul class="drop">
+                        <li><a href="#"><i class='bx bxs-dashboard'></i> Dashboard</a></li>
+                        <li><a href="#"><i class='bx bxs-megaphone'></i> Announcements</a></li>
+                        <li><a href="#"><i class='bx bxs-video'></i> Videos</a></li>
+                        <li><a href="#"><i class='bx bxs-user-detail'></i> Users</a></li>
+                        <li><a href="#"><i class='bx bx-question-mark'></i> FAQs</a></li>
+                        <li><a href="#"><i class='bx bx-cog'></i> Settings</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </header>
+    
+        <!-- Dashboard Content -->
+        <div id="page-content">
+            <section id="dashboard">
+            <h1>Welcome Back, Admin! <i class='bx bxs-wink-smile'></i></h1>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                <h3>5</h3>
+                <p>Active Announcements</p>
+                </div>
+                <div class="stat-card">
+                <h3>12</h3>
+                <p>Total Videos</p>
+                </div>
+                <div class="stat-card">
+                <h3>350</h3>
+                <p>Registered Users</p>
+                </div>
+                <div class="stat-card">
+                <h3>20</h3>
+                <p>FAQs Answered</p>
+                </div>
+            </div>
+            <div class="dashboard-widgets">
+                <div class="widget-card">
+                    <h4>Recent Activity</h4>
+                    <ul>
+                    <li>New video uploaded - Orientation 101</li>
+                    <li>FAQ updated - Schedule</li>
+                    <li>Announcement posted - Welcome Note</li>
+                    </ul>
+                </div>
+                <div class="widget-card">
+                    <h4>Quick Settings</h4>
+                    <button onclick="location.href='/admin/settings.html'">Manage Settings</button>
+                </div>
+                </div>          
+            </section>
+        </div>
+    
+        <!-- Footer -->
+        <footer class="admin-footer">
+            <p>StepIn Admin Panel - ©2025</p>
+        </footer>
+    </div>  
+  <script src="/js/admin.js"></script>
+</body>
+</html>

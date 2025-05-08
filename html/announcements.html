@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StepIn - Announcements</title>
+  <link rel="stylesheet" href="/css/announcements.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Step<span>In</span></div>
+    <ul class="nav-links">
+      <li class="dropdown">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <ul class="dropdown-menu" id="dropdown-menu">
+          <li><a href="/html/homepage.html">Home</a></li>
+          <li><a href="#">Videos</a></li>
+          <li><a href="#">About KTU</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="/html/announcements.html">Announcements</a></li>
+          <li><a href="/html/staff.html">Lecturers' Zone</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="announcements-section">
+    <h1>📢 Latest Announcements</h1>
+
+    <div class="filter-bar">
+      <input type="text" placeholder="Search announcements..." id="searchBar">
+      <select>
+        <option value="all">All</option>
+        <option value="academic">Academic</option>
+        <option value="events">Events</option>
+        <option value="general">General</option>
+      </select>
+    </div>
+
+    <section class="announcement-list">
+      <div class="announcement-card">
+        <h2>📅 Orientation Begins</h2>
+        <p>New students should report to the auditorium on Monday at 9:00am for the welcome session.</p>
+        <span class="date">April 6, 2025</span>
+      </div>
+
+      <div class="announcement-card">
+        <h2>🔌 Power Outage Notice</h2>
+        <p>There will be a temporary power outage on Tuesday due to maintenance.</p>
+        <span class="date">April 4, 2025</span>
+      </div>
+      
+      <!-- more cards -->
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 StepIn | Designed for KTU Freshmen</p>
+    <div class="socials">
+      <i class='bx bxl-facebook'></i>
+      <i class='bx bxl-instagram'></i>
+      <i class='bx bxl-twitter'></i>
+    </div>
+  </footer>
+  <script type="module" src="/js/welcome.js"></script>
+  <script>
+    const menuIcon = document.getElementById("menu-icon");
+    const dropdownMenu = document.getElementById("dropdown-menu");
+  
+    menuIcon.addEventListener("click", () => {
+      dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+  </script> 
+</body>
+</html>

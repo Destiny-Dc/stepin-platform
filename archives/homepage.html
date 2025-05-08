@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project 1.0 - homepage</title>
+    <link rel="stylesheet" href="/css/homepage.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo"><p>Step<span>-In</span></p></div>
+        <div class="navigations">
+            <ul>
+                <li><i class='bx bxs-home'></i><a href="#">home</a></li>
+                <li class="dropdown"><i class='bx bxs-videos'></i><a href="#">videos</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">live</a><i class='bx bxs-videos'></i></li>
+                        <li><a href="#">past videos</a><i class='bx bxs-video' ></i></li>
+                    </ul>
+                </li>                
+                <li><i class='bx bx-info-circle' ></i><a href="#">about ktu</a></li>
+                <li><i class='bx bx-question-mark' ></i><a href="#">FAQs</a></li>
+                <li><i class='bx bx-log-in-circle' ></i><a href="#">login/register</a></li>
+                <li><i class='bx bxs-bell-ring' ></i><a href="#">announcements</a></li>
+                <li><i class='bx bxs-contact' ></i><a href="#">contact-us</a></li>
+                <li id="prof"><i id="profi" class='bx bx-user' ></i></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Welcome to <span>StepIn</span></h1>
+      <p>Your gateway to a smooth orientation at KTU. Join live sessions, access past content, and explore campus life — all in one place.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn primary">Get Started</a>
+        <a href="#" class="btn secondary">Watch Orientation</a>
+      </div>
+    </div>
+  </header>
+    <main>main</main>
+    <footer>foot</footer>
+    <script>
+        document.querySelectorAll('li').forEach(item => {
+          item.addEventListener('click', () => {
+            item.classList.add('shift-right');
+            setTimeout(() => {
+              item.classList.remove('shift-right');
+            }, 400); // match animation duration
+          });
+        });
+      </script>      
+</body>
+</html>

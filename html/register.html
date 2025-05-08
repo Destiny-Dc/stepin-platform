@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StepIn – Register</title>
+  <link rel="stylesheet" href="/css/register.css" />
+</head>
+<body>
+  <div class="register-container">
+    <div class="form-box">
+      <div class="logo-section">
+        <img src="/images/logo.jpg" alt="StepIn Logo" class="logo">
+        <h2>Create Your Account</h2>
+        <p>Join StepIn and get started</p>
+      </div>
+
+      <form id="registerForm">
+        <div class="row">
+          <div class="input-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" required />
+          </div>
+          <div class="input-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" required />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="indexNumber">Index Number</label>
+          <input type="text" id="indexNumber" required />
+        </div>
+
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" required />
+        </div>
+
+        <div class="row">
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required />
+          </div>
+          <div class="input-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" required />
+          </div>
+        </div>
+
+        <p id="passwordError" class="error-message">Passwords do not match.</p>
+
+        <button type="submit" class="submit-btn">Register</button>
+      </form>
+
+      <p class="login-link">
+        Already have an account? <a href="login.html">Log in</a>
+      </p>
+    </div>
+  </div>
+
+  <script type="module" src="/js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f8f8;
+    padding: 2rem;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: blue;
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffcc00;
+  }
+
+  .navbar .logo span {
+    color: white;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.5rem;
+  }
+
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-links li a:hover {
+    border-bottom: 1px solid orange;
+  }
+
+  .nav-links .btn {
+    background: white;
+    color: teal;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+
+  .nav-links .btn:hover {
+    background: #ffcc00;
+    color: teal;
+  }
+
+  .dropdown {
+    position: fixed;
+    right: 1rem;
+    top: 1.2rem;
+  }
+  .dropdown i:hover{
+    color: rgb(49, 49, 168);
+  }
+  
+  .dropdown i {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1.5rem;
+    border-top-right-radius: 0;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    width: 15rem;
+    border: 1px solid blue;
+  }
+  
+  .dropdown-menu li {
+    margin: 0.5rem;
+    list-style: none;
+
+    }
+  
+  .dropdown-menu li a {
+    color: rgb(22, 12, 12);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .dropdown-menu li a:hover {
+    border-bottom: 1px solid blue ;
+  }
+    
+  .lecturers-container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .lecturers-container h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    color: rgb(17, 65, 65);
+  }
+  
+  .lecturers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  .lecturer-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .lecturer-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  .lecturer-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: #222;
+  }
+  
+  .role {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+  }
+  
+  .department {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .contact-btn {
+    background: teal;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+  }
+  
+  .contact-btn:hover {
+    background: #008080cc;
+  }
+    
+    /* Footer Styles */
+  footer {
+    background: rgb(6, 1, 255);
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+    width: 100%;
+    margin: 0;
+    margin-top: 4rem;
+  }
+
+  footer p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  footer .socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+  }
+
+  footer .socials i {
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  footer .socials i:hover {
+    color: #ffcc00;
+  }

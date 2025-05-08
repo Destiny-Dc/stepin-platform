@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: #f9f9f9;
+    color: #333;
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: blue;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: white;
+  }
+  
+  .logo {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: orange;
+  }
+  
+  .logo span {
+    color: white;
+  }
+  
+  .nav-links {
+    position: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 4rem;
+    top: 0;
+    right: 0;
+  }
+  
+  .btn{
+    padding: 2rem;
+    margin: 2rem;
+    color: rgb(255, 255, 255);
+  }
+
+  li{
+    margin: 0;
+    padding: 0;
+  }
+
+  .dropdown {
+    position: absolute;
+    right: 0;
+  }
+  .dropdown i:hover{
+    color: rgb(49, 49, 168);
+  }
+  
+  .dropdown i {
+    position: fixed;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    border: 1px solid orange;
+    right: 1rem;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    width: 15rem;
+    border: 1px solid blue;
+  }
+  
+  .dropdown-menu li {
+    margin: 0.5rem;
+    list-style: none;
+
+    }
+  
+  .dropdown-menu li a {
+    color: rgb(22, 12, 12);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .dropdown-menu li a:hover {
+    border-bottom: 1px solid blue ;
+  }
+  /* HERO */
+  .hero {
+    background: transparent;
+    color: white;
+    border: 1px solid yellowgreen;
+    padding: 5rem 2rem;
+    text-align: center;
+    margin: 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    color: black;
+  }
+  
+  .hero span {
+    color: teal;
+  }
+  
+  .hero p {
+    max-width: 600px;
+    margin: 1rem auto;
+    color: black;
+  }
+  
+  .hero-buttons {
+    margin-top: 2rem;
+  }
+  
+  .btn {
+    padding: 0.7rem 1.5rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .primary {
+    background: teal;
+    color: white;
+  }
+  
+  .secondary {
+    background: white;
+    color: teal;
+    border: 2px solid teal;
+  }
+  
+  .secondary:hover {
+    background: teal;
+    color: white;
+  }
+  
+  /* FEATURES */
+  .features {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #ffffff;
+  }
+  
+  .feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background: rgb(8, 194, 194);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    box-shadow: 0 3px 7px rebeccapurple;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card i {
+    font-size: 2rem;
+    color: teal;
+    margin-bottom: 1rem;
+  }
+  
+  /* TESTIMONIAL SLIDER */
+  .testimonials {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #fdfdfd;
+  }
+
+  .testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .testimonial-slider {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 200px;
+  }
+
+  .testimonial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-style: italic;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid blue;
+  }
+
+  .testimonial.active {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 1;
+  }
+
+  .testimonial h4 {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: teal;
+  }
+
+
+  
+  /* FOOTER */
+  footer {
+    background: blue;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  footer .socials i {
+    margin: 0 10px;
+    cursor: pointer;
+    color: orange;
+  }
+  
+  footer .socials i:hover {
+    color: white;
+  }
+  
+
+  @media (max-width: 750px) {
+    .navbar {
+      flex-direction: row;
+      align-items: flex-start;
+      row-gap: 1px;
+    }
+  
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      width: 100px;
+      gap: 0.2rem;
+      margin-top: 0.5rem;
+      width: 150px;
+    }
+
+    .dropdown{
+      border: 2px solid green;
+      color: green;
+      top: 1.5rem;
+      right: 1rem;
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .nav-links .btn{
+      color: rgb(243, 243, 9);
+
+    }
+
+    .navbar li .btn{
+      color: white;
+      padding: 0;
+      margin: 0;
+    }
+
+    .dropdown i {
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: rgb(255, 255, 255);
+    }
+    
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+      text-wrap: 1;
+    }
+  
+    .hero-buttons {
+      flex-direction: column;
+    }
+  
+    .feature-cards {
+      grid-template-columns: 1fr;
+    }
+  
+    footer {
+      text-align: center;
+    }
+  } 
+
+  /* ========== Animations ========== */
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* ========== Apply Them ========== */
+  
+  .hero-text {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .card {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+  }
+  
+  .card:nth-child(1) { animation-delay: 0.2s; }
+  .card:nth-child(2) { animation-delay: 0.4s; }
+  .card:nth-child(3) { animation-delay: 0.6s; }
+  .card:nth-child(4) { animation-delay: 0.8s; }
+  
+  .btn.primary:hover,
+  .btn.secondary:hover {
+    animation: pulse 0.5s ease-in-out;
+  }
+  

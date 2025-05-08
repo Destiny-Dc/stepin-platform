@@ -1,0 +1,130 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body background */
+  body {
+    background: linear-gradient(to bottom right, #f3e8ff, #dbeafe, #fce7f3);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Container */
+  .register-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+  }
+  
+  /* Form box */
+  .form-box {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo and heading */
+  .logo-section {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .logo {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+  }
+  
+  .logo-section h2 {
+    font-size: 24px;
+    color: #1f2937;
+    font-weight: bold;
+  }
+  
+  .logo-section p {
+    font-size: 14px;
+    color: #6b7280;
+  }
+  
+  /* Input groups */
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    flex: 1;
+  }
+  
+  .input-group label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #374151;
+  }
+  
+  .input-group input {
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+  }
+  
+  .input-group input:focus {
+    outline: none;
+    border-color: #60a5fa;
+  }
+  
+  /* Row for 2 inputs side-by-side */
+  .row {
+    display: flex;
+    gap: 16px;
+  }
+  
+  /* Error message */
+  .error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+    margin-bottom: 10px;
+  }
+  
+  /* Submit button */
+  .submit-btn {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #1d4ed8;
+  }
+  
+  /* Link to login */
+  .login-link {
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 16px;
+  }
+  
+  .login-link a {
+    color: #1e3a8a;
+    text-decoration: none;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  

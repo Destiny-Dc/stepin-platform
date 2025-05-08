@@ -1,0 +1,48 @@
+<!-- faq.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQs – StepIn</title>
+  <link rel="stylesheet" href="/css/FAQs.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="faq-header">
+    <div class="logo">Step<span>In</span></div>
+    <nav class="nav">
+      <a href="homepage.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="videos.html">Videos</a>
+      <a href="faq.html" class="active">FAQs</a>
+    </nav>
+  </header>
+
+  <!-- Ask a Question Section -->
+  <section class="ask-question">
+    <h2>Ask a Question</h2>
+    <form id="questionForm">
+      <input type="text" id="name" placeholder="Your name" required />
+      <input type="email" id="email" placeholder="Your email" required />
+      <textarea id="question" placeholder="Your question..." required></textarea>
+      <button type="submit">Submit Question</button>
+    </form>
+  </section>
+
+  <!-- FAQs List Section -->
+  <section class="faq-list">
+    <h2>Previously Asked Questions</h2>
+    <div id="faqItems">
+      <!-- Questions and answers will load here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="faq-footer">
+    <p>&copy; 2025 StepIn. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/faq.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Orientation - StepIn</title>
+  <link rel="stylesheet" href="/css/live.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <!-- Header Navbar -->
+  <nav class="navbar">
+    <div class="logo">Step<span>In</span></div>
+
+    <ul class="nav-links">
+      <li class="dropdown">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <ul class="dropdown-menu" id="dropdown-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Videos</a></li>
+          <li><a href="#">About KTU</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="/html/announcements.html">Announcements</a></li>
+          <li><a href="/html/staff.html">Lecturers' Zone</a></li>
+        </ul>
+      </li>
+
+      <!-- Profile Icon -->
+      <div class="profile">
+        <button><a href="profile.html"><i class='bx bx-user'></i></a></button>
+      </div>
+    </ul>
+  </nav>
+
+  <!-- Main Live Content -->
+  <main class="live-section">
+    <h2>Live Orientation</h2>
+    <div class="video-container">
+      <!-- Embed YouTube Live -->
+      <iframe src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Comment Section -->
+    <section class="comment-section">
+      <h3>Ask a Question or Leave a Comment</h3>
+      <form class="comment-form">
+        <input type="text" placeholder="Your name" required>
+        <textarea placeholder="Type your comment here..." required></textarea>
+        <button type="submit">Post Comment</button>
+      </form>
+
+      <!-- Sample Past Comments -->
+      <div class="comment-list">
+        <div class="comment">
+          <strong>Emmanuel:</strong>
+          <p>Will the session be recorded for later viewing?</p>
+        </div>
+        <div class="comment">
+          <strong>Nana Ama:</strong>
+          <p>This orientation is so helpful. Thanks!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 StepIn Platform | All rights reserved.
+  </footer>
+
+</body>
+</html>
