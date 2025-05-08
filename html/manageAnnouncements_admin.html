@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Announcements</title>
+  <link rel="stylesheet" href="/css/manageAnnouncements_admin.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="main-container">
+    <!-- Header -->
+    <header class="admin-header">
+      <div class="admin-logo">Step<span>In</span></div>
+      <div class="header-right">
+        <div class="profile">
+          <a href="/html/profile.html"><i class='bx bx-user'></i></a>
+        </div>
+        <div class="profile" id="profileBtn">
+          <i class='bx bx-menu'></i>
+          <div class="menu-dropdown" id="menuDropdown">
+            <ul class="dropdown-menu">
+              <li><a href="homepage.html">Home</a></li>
+              <li><a href="/html/pastVideos.html">Videos</a></li>
+              <li><a href="/html/about.html">About KTU</a></li>
+              <li><a href="/html/FAQs.html">FAQs</a></li>
+              <li><a href="/html/announcements.html">Announcements</a></li>
+              <li><a href="/html/staff.html">Lecturers' Zone</a></li>
+              <li><a href="wifii.html">WiFi Passwords</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <main class="announcement-section">
+      <h1>Manage Announcements</h1>
+
+      <!-- Form -->
+      <form class="announcement-form">
+        <input type="text" placeholder="Announcement Title" required>
+        <textarea placeholder="Type your announcement here..." required></textarea>
+        <button type="submit"><i class='bx bx-send'></i> Post Announcement</button>
+      </form>
+
+      <!-- List of Announcements -->
+      <div class="announcement-list">
+        <div class="announcement-card">
+          <h3>Orientation Starts Monday</h3>
+          <p>All freshers are expected to report to the auditorium by 9 AM. Dress formally.</p>
+          <span class="date">Posted on: May 5, 2025</span>
+        </div>
+        <div class="announcement-card">
+          <h3>WiFi Maintenance Notice</h3>
+          <p>The campus network will be down from 11 PM tonight for routine maintenance.</p>
+          <span class="date">Posted on: May 4, 2025</span>
+        </div>
+        <!-- More cards to be populated dynamically later -->
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+      <p>StepIn Admin Panel - ©2025</p>
+    </footer>
+  </div>
+</body>
+</html>

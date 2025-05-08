@@ -1,0 +1,109 @@
+/* Admin Dashboard Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.admin-header {
+    background-color: #003366; /* Blue header */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.admin-logo span {
+    color: orange;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.profile a {
+    color: white;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.menu-dropdown {
+    display: none;
+}
+
+.profile:hover .menu-dropdown {
+    display: block;
+    position: absolute;
+    background-color: #003366;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdown-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdown-menu li {
+    padding: 8px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.tabs {
+    display: flex;
+    background-color: #f4f4f4;
+    padding: 10px 0;
+}
+
+.tab-link {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #e0e0e0;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-link:hover {
+    background-color: #cccccc;
+}
+
+.tab-link.active {
+    background-color: #003366;
+    color: white;
+}
+
+.tab-content {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.admin-footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - StepIn</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="main-content">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="admin-logo">Step<span>In</span></div>
+            <div class="header-right">
+                <div class="profile">
+                    <a href="/html/profile.html"><i class='bx bx-user'></i></a>
+                </div>
+                <div class="profile" id="profileBtn"> 
+                    <i class='bx bx-menu'></i>
+                    <div class="menu-dropdown" id="menuDropdown">
+                        <ul class="dropdown-menu" id="dropdown-menu">
+                            <li><a href="homepage.html">Home</a></li>
+                            <li><a href="/html/pastVideos.html">Videos</a></li>
+                            <li><a href="/html/about.html">About KTU</a></li>
+                            <li><a href="/html/FAQs.html">FAQs</a></li>
+                            <li><a href="/html/announcements.html">Announcements</a></li>
+                            <li><a href="/html/staff.html">Lecturers' Zone</a></li>
+                            <li><a href="wifii.html">WiFi Passwords</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <!-- Dashboard Content -->
+        <div id="page-content">
+            <section id="dashboard">
+                <h1>Welcome Back, Admin! <i class='bx bxs-wink-smile'></i></h1>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <h3>5</h3>
+                        <p>Active Announcements</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>12</h3>
+                        <p>Total Videos</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>350</h3>
+                        <p>Registered Users</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>20</h3>
+                        <p>FAQs Answered</p>
+                    </div>
+                </div>
+                <div class="tabs">
+                    <button class="tab-link active" onclick="openTab(event, 'manage-users')">Manage Users</button>
+                    <button class="tab-link" onclick="openTab(event, 'manage-announcements')">Manage Announcements</button>
+                    <button class="tab-link" onclick="openTab(event, 'manage-faqs')">Manage FAQs</button>
+                    <button class="tab-link" onclick="openTab(event, 'manage-videos')">Manage Videos</button>
+                    <button class="tab-link" onclick="openTab(event, 'manage-lecturers')">Manage Lecturers</button>
+                    <button class="tab-link" onclick="openTab(event, 'manage-wifi')">Manage WiFi</button>
+                </div>
+                <div class="tab-content">
+                    <!-- Manage Users Tab -->
+                    <div id="manage-users" class="tab-pane active">
+                        <h2>Manage Users</h2>
+                        <p>Manage user accounts here.</p>
+                    </div>
+                    <!-- Manage Announcements Tab -->
+                    <div id="manage-announcements" class="tab-pane">
+                        <h2>Manage Announcements</h2>
+                        <p>Manage announcements here.</p>
+                    </div>
+                    <!-- Manage FAQs Tab -->
+                    <div id="manage-faqs" class="tab-pane">
+                        <h2>Manage FAQs</h2>
+                        <p>Manage FAQs here.</p>
+                    </div>
+                    <!-- Manage Videos Tab -->
+                    <div id="manage-videos" class="tab-pane">
+                        <h2>Manage Videos</h2>
+                        <p>Manage videos here.</p>
+                    </div>
+                    <!-- Manage Lecturers Tab -->
+                    <div id="manage-lecturers" class="tab-pane">
+                        <h2>Manage Lecturers</h2>
+                        <p>Manage lecturers' information here.</p>
+                    </div>
+                    <!-- Manage WiFi Tab -->
+                    <div id="manage-wifi" class="tab-pane">
+                        <h2>Manage WiFi</h2>
+                        <p>Manage WiFi passwords here.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+        <!-- Footer -->
+        <footer class="admin-footer">
+            <p>StepIn Admin Panel - ©2025</p>
+        </footer>
+    </div>  
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

@@ -113,18 +113,27 @@ body {
 }
 
 /* Footer styles */
-.faq-footer {
-  background-color: blue;
-  color: #fff;
+footer {
+  background: blue;
+  color: white;
+  padding: 0.8rem;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+}
+
+footer .socials i {
+  margin: 0 8px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+footer .socials i:hover {
+  color: orange;
 }
 
 /* Responsive tweaks */
 @media screen and (max-width: 768px) {
   .faq-header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
   .nav {
