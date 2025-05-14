@@ -9,6 +9,7 @@
     background-color: #f5f7fa;
   }
   
+  /* Header */
   .admin-header {
     background-color: blue;
     color: #fff;
@@ -19,13 +20,13 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid orange;
   }
   
   .admin-logo {
-    font-size: 2rem;
+    font-size: 22px;
     font-weight: bold;
     color: orange;
-    font-weight: 900;
   }
   
   .admin-logo span {
@@ -41,46 +42,40 @@
     margin-left: 20px;
     position: relative;
     border: 2px solid orange;
-    align-items: center;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
+    size: 1.5rem;
+    text-align: center;
     height: 1.9rem;
     width: 1.9rem;
-    text-align: center;
   }
   
   .profile a,
   .profile i {
     color: #fff;
-    font-size: 1.3rem;
     text-decoration: none;
+    font-size: 22px;
     cursor: pointer;
-    display: flex;
-  }
-  .profile i {
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
   }
   
   .menu-dropdown {
     display: none;
     position: absolute;
     right: 0;
+    top: 38px;
     background: white;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     width: 230px;
-    transition: all 0.4s ease;
     color: rgb(0, 0, 0);
     padding: 1rem;
     border: 1px solid blue;
     border-radius: 2rem;
     border-top-right-radius: 0;
   }
-
+  
   .profile:hover .menu-dropdown {
     display: block;
-    top: 1.32rem;
+    top: 1.5rem;
   }
   
   .menu-dropdown ul {
@@ -90,10 +85,10 @@
   
   .menu-dropdown li {
     list-style: none;
-    margin: 0;
     padding: 3px 0;
-    cursor: pointer;
+    width: 100%;
   }
+  
   .menu-dropdown a {
     display: flex;
     align-items: center;
@@ -104,7 +99,6 @@
     font-size: 16px;
     transition: background-color 0.2s ease;
     border-radius: 6px;
-    width: 100%;
   }
   
   .menu-dropdown a:hover {
@@ -112,16 +106,20 @@
     border-bottom: 1px solid blue;
   }
   
-  .announcement-section {
+  /* Main Section */
+  .video-section {
     padding: 40px 30px;
   }
   
-  .announcement-section h1 {
+  .video-section h1 {
     margin-bottom: 25px;
     color: #202a44;
+    align-self: center;
+    text-align: center;
   }
   
-  .announcement-form {
+  /* Video Form */
+  .video-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -132,20 +130,20 @@
     margin-bottom: 30px;
   }
   
-  .announcement-form input,
-  .announcement-form textarea {
+  .video-form input,
+  .video-form textarea {
     padding: 12px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
   
-  .announcement-form textarea {
+  .video-form textarea {
     resize: vertical;
     min-height: 100px;
   }
   
-  .announcement-form button {
+  .video-form button {
     align-self: flex-start;
     background-color: blue;
     color: white;
@@ -158,48 +156,69 @@
     align-items: center;
     gap: 8px;
     transition: 0.3s;
+    align-self: center;
+    text-align: center;
   }
   
-  .announcement-form button:hover {
-    background-color: #4853b8;
+  .video-form button:hover {
+    background-color: #00997a;
   }
   
-  .announcement-list {
+  /* Video Preview */
+  .video-preview {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  }
+  
+  .video-preview h2 {
+    margin-bottom: 15px;
+    color: #202a44;
+    align-self: center;
+    text-align: center;
+  }
+  
+  /* Video List */
+  .video-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
   
-  .announcement-card {
+  .video-card {
     background: #fff;
     padding: 20px;
-    border-left: 5px solid blue;
-    border-radius: 1rem;
+    border-left: 5px solid #00b894;
+    border-radius: 5px;
     box-shadow: 0 0 8px rgba(0,0,0,0.05);
-    width: 100%;
-    position: relative;
   }
   
-  .announcement-card h3 {
+  .video-card h3 {
     color: #202a44;
     margin-bottom: 10px;
   }
   
-  .announcement-card p {
+  .video-card p {
     color: #555;
-    margin-bottom: 2rem;
+    margin-bottom: 8px;
+
   }
   
-  .announcement-card .date {
+  .video-card .category {
+    font-size: 14px;
+    font-style: italic;
+    color: #777;
+  }
+  
+  .video-card .date {
     font-size: 13px;
-    color: black;
-    margin-top: 10px;
-    position: absolute;   /* Add these lines */
-    bottom: 15px;
-    right: 20px;
-    text-decoration: underline;
+    color: #888;
+    float: right;
   }
   
+  /* Footer */
   .admin-footer {
     text-align: center;
     padding: 20px;

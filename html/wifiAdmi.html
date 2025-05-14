@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage WiFi</title>
+  <link rel="stylesheet" href="/css/manageWifi_admin.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="main-container">
+    <!-- Header -->
+    <header class="admin-header">
+      <div class="admin-logo">Step<span>In</span></div>
+      <div class="header-right">
+        <div class="profile">
+          <a href="/html/profile.html"><i class='bx bx-user' style="font-size: 1.6rem;"></i></a>
+        </div>
+        <div class="profile" id="profileBtn">
+          <i class='bx bx-menu' style="font-size: 1.6rem; cursor: pointer;"></i>
+          <div class="menu-dropdown" id="menuDropdown">
+            <ul class="dropdown-menu">
+              <li><a href="homepage.html">Home</a></li>
+              <li><a href="/html/pastVideos.html">Videos</a></li>
+              <li><a href="/html/about.html">About KTU</a></li>
+              <li><a href="/html/FAQs.html">FAQs</a></li>
+              <li><a href="/html/announcements.html">Announcements</a></li>
+              <li><a href="/html/staff.html">Lecturers' Zone</a></li>
+              <li><a href="wifii.html">WiFi Passwords</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <main class="wifi-section">
+      <!-- WiFi Form -->
+      <form class="wifi-form">
+        <label for="wifi-name">Location</label>
+        <input type="text" id="wifi-name" placeholder="e.g. KTU-Staff" required>
+        
+        <label for="wifi-name">WiFi Name</label>
+        <input type="text" id="wifi-name" placeholder="e.g. KTU-Staff" required>
+      
+        <label for="wifi-password">Password</label>
+        <input type="text" id="wifi-password" placeholder="e.g. P@ssw0rd2025" required>
+      
+        <button type="submit"><i class='bx bx-plus'></i> Add WiFi</button>
+      </form>
+
+      <!-- WiFi List -->
+      <div class="wifi-container">
+        <h1>Campus WiFi Passwords</h1>
+        <table class="wifi-table">
+            <thead>
+                <tr>
+                  <th>Location</th>
+                  <th>WiFi Name</th>
+                  <th>Password</th>
+                  <th>Last Updated</th>
+                  <th>Actions</th>
+                </tr>
+            </thead>
+          <tbody>
+            <tr>
+              <td>Main Library</td>
+              <td>KTU-Library</td>
+              <td>study@ktu2025</td>
+              <td>May 7, 2025</td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Admin Block</td>
+              <td>KTU-Admin</td>
+              <td>adminzone456</td>
+              <td>May 6, 2025</td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+    </main>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+      <p>StepIn Admin Panel - ©2025</p>
+    </footer>
+  </div>
+  <script>
+    const form = document.querySelector('.wifi-form');
+    const nameInput = document.getElementById('wifi-name');
+    const passwordInput = document.getElementById('wifi-password');
+    const table = document.querySelector('.wifi-table tbody');
+    const button = form.querySelector('button');
+  
+    let editRow = null;
+  
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const name = nameInput.value.trim();
+      const password = passwordInput.value.trim();
+      const date = new Date().toLocaleDateString('en-US', {
+        month: 'short', day: 'numeric', year: 'numeric'
+      });
+  
+      if (!name || !password) return;
+  
+      if (editRow) {
+        // Update existing row
+        editRow.cells[1].textContent = name;
+        editRow.cells[2].textContent = password;
+        editRow.cells[3].textContent = date;
+        button.innerHTML = "<i class='bx bx-plus'></i> Add WiFi";
+        editRow = null;
+      } else {
+        // Add new row
+        const row = table.insertRow();
+        row.innerHTML = `
+          <td>Unknown</td>
+          <td>${name}</td>
+          <td>${password}</td>
+          <td>${date}</td>
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        `;
+      }
+  
+      form.reset();
+    });
+  
+    table.addEventListener('click', function (e) {
+      if (e.target.classList.contains('edit-btn')) {
+        const row = e.target.closest('tr');
+        nameInput.value = row.cells[1].textContent;
+        passwordInput.value = row.cells[2].textContent;
+        button.innerHTML = "Update WiFi";
+        editRow = row;
+      }
+  
+      if (e.target.classList.contains('delete-btn')) {
+        const row = e.target.closest('tr');
+        if (confirm("Are you sure you want to delete this WiFi record?")) {
+          row.remove();
+        }
+      }
+    });
+  </script>  
+</body>
+</html>

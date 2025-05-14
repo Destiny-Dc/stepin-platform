@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7fa;
+  }
+  
+  .admin-header {
+    background-color: blue;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .admin-logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: orange;
+  }
+  
+  .admin-logo span {
+    color: white;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile {
+    margin-left: 20px;
+    position: relative;
+    border: 2px solid orange;
+    border-radius: 5rem;
+    text-align: center;
+    height: 2rem;
+    width: 2rem;
+  }
+  
+  .profile a,
+  .profile i {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .menu-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 38px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 230px;
+    transition: all 0.4s ease;
+    color: black;
+    padding: 1rem;
+    border: 1px solid green;
+    border-radius: 2rem;
+    border-top-right-radius: 0;
+  }
+  
+  .profile:hover .menu-dropdown {
+    display: block;
+    top: 1.32rem;
+  }
+  
+  .menu-dropdown ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-dropdown li {
+    list-style: none;
+  }
+  
+  .menu-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .menu-dropdown a:hover {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid blue;
+    cursor: pointer;
+  }
+  
+  /* === WiFi Section === */
+  .wifi-section {
+    padding: 40px 30px;
+  }
+  
+  .wifi-section h1 {
+    margin-bottom: 25px;
+    color: #202a44;
+  }
+  
+  /* === WiFi Form === */
+  .wifi-form {
+    background: #ffffff;
+    padding: 30px;
+    width: 70%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    margin-bottom: 40px;
+    max-width: 1000px;
+    justify-self: center;
+  }
+  
+  .wifi-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    color: #202a44;
+  }
+  
+  .wifi-form input[type="text"] {
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: border 0.3s ease;
+  }
+  
+  .wifi-form input[type="text"]:focus {
+    border-color: #0077cc;
+    outline: none;
+  }
+  
+  .wifi-form button {
+    background-color: #0077cc;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    display: flex;
+    position: relative;
+    justify-self: center;
+  }
+  
+  .wifi-form button:hover {
+    background-color: #005fa3;
+  }
+  
+  
+  .wifi-form button:hover {
+    background-color: #004c99;
+  }
+  
+  /* === WiFi List === */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .wifi-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .wifi-container h1 {
+    margin-bottom: 25px;
+    color: #202a44;
+    font-size: 28px;
+  }
+  
+  .wifi-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .wifi-table th,
+  .wifi-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #2c2929;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .wifi-table th {
+    background-color: #a5bbf1;
+    color: white;
+  }
+  
+  .wifi-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .wifi-table tr:hover {
+    background-color: #e6f7ff;
+  }
+
+  .edit-btn, .delete-btn {
+    padding: 6px 10px;
+    margin: 0 3px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .edit-btn {
+    background-color: blue;
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  
+  @media (max-width: 600px) {
+    .wifi-table th,
+    .wifi-table td {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  
+  
+  /* === Footer === */
+  .admin-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: blue;
+    color: white;
+    font-size: 14px;
+    margin-top: 40px;
+  }
+  

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Videos</title>
+  <link rel="stylesheet" href="/css/manageVideos_admin.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="main-container">
+    <!-- Header -->
+    <header class="admin-header">
+      <div class="admin-logo">Step<span>In</span></div>
+      <div class="header-right">
+        <div class="profile">
+          <a href="/html/profile.html"><i class='bx bx-user'></i></a>
+        </div>
+        <div class="profile">
+          <i class='bx bx-menu'></i>
+          <div class="menu-dropdown">
+            <ul class="dropdown-menu">
+              <li><a href="admin.html">Dashboard</a></li>
+              <li><a href="#">Videos</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="manageAnnouncements_admin.html">Announcements</a></li>
+              <li><a href="manageLecturers-Admin.html">Lecturers' Zone</a></li>
+              <li><a href="wifiAdmi.html">WiFi Passwords</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <main class="video-section">
+      <h1>Manage Videos</h1>
+
+      <!-- Form -->
+      <form class="video-form">
+        <input type="text" placeholder="Video Title" required />
+        <input type="text" placeholder="YouTube Link" required />
+        <input type="text" placeholder="Category (e.g. Orientation, Interview)" />
+        <textarea placeholder="Video Description" required></textarea>
+        <button type="submit"><i class='bx bx-upload'></i> Upload Video</button>
+      </form>
+
+      <!-- Live Preview (if needed) -->
+      <div class="video-preview">
+        <h2>Preview</h2>
+        <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- List of Videos -->
+      <div class="video-list">
+        <div class="video-card">
+          <h3>2025 Orientation - Day 1</h3>
+          <p>Introduction and welcome message from the dean.</p>
+          <span class="category">Category: Orientation</span><br />
+          <span class="date">Uploaded: May 5, 2025</span>
+        </div>
+        <!-- More video cards will go here dynamically -->
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+      <p>StepIn Admin Panel - ©2025</p>
+    </footer>
+  </div>
+
+  <script>
+    const linkInput = document.querySelector('input[placeholder="YouTube Link"]');
+    const frame = document.getElementById("videoFrame");
+
+    linkInput.addEventListener("input", () => {
+      const url = linkInput.value;
+      if (url.includes("youtube.com") || url.includes("youtu.be")) {
+        let videoId = "";
+        if (url.includes("v=")) {
+          videoId = new URL(url).searchParams.get("v");
+        } else if (url.includes("youtu.be/")) {
+          videoId = url.split("youtu.be/")[1];
+        }
+        frame.src = `https://www.youtube.com/embed/${videoId}`;
+      }
+    });
+  </script>
+</body>
+</html>

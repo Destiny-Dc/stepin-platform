@@ -42,6 +42,11 @@
   .admin-logo {
     font-size: 2rem;
     font-weight: bold;
+    color: orange;
+  }
+
+  span{
+    color: white;
   }
   
   .header-right {
@@ -63,6 +68,10 @@
   .profile i {
     margin-right: 3px;
     font-size: 1.6rem;
+    color: #f0f0f0;
+    border: 2px solid orange;
+    border-radius: 0.5rem;
+    padding: 0.1rem;
   }
   
   /* Dropdown Menu */
@@ -72,14 +81,16 @@
     position: absolute;
     right: 0;
     top: 38px;
-    background-color: transparent;
+    background: white;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     width: 230px;
     transition: all 0.4s ease;
     color: rgb(0, 0, 0);
     padding: 1rem;
-    border: 1px solid blue;
+    border: 1px solid green;
+    border-radius: 2rem;
+    border-top-right-radius: 0;
   }
   .menu-dropdown ul {
     padding: 0;
@@ -103,13 +114,9 @@
     border-radius: 6px;
   }
   
-  /* .menu-dropdown a:last-child {
-    border-bottom: none;
-  } */
-  
   .menu-dropdown a:hover {
     background-color: #f0f0f0;
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid blue;
   }
   
   /* Main content */
@@ -133,22 +140,37 @@
   
   .dashboard-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
   }
   
   .stat-card {
     background-color: rgba(0,0,0,0.1);
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 2rem;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     font-size: 1.1rem;
     font-weight: 500;
     height: 10rem;
-    border-left: 5px solid blue;
-    border-right: 5px solid blue;
-    align-content: center;
+    border-left: 3px solid blue;
+    border-right: 3px solid blue;
+    border-top: 1px solid blue;
+    border-bottom: 1px solid blue;
+  }
+
+  .stat-card:hover{
+    transform: translateY(5px);
+    cursor: pointer;
+  }
+
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    text-align: center;
   }
   
   /* Additional Widgets */
@@ -161,7 +183,7 @@
   
   .widget-card {
     background-color: whitesmoke;
-    border-radius: 12px;
+    border-radius: 2rem;
     padding: 20px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     display: grid;
@@ -173,16 +195,29 @@
     color: blue;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
   
   .widget-card ul {
     list-style: none;
     padding-left: 0;
+    text-align: center;
   }
   
   .widget-card li {
     padding: 5px 0;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid blue;
+  }
+
+  button{
+    background: blue;
+    height: 2rem;
+    border-radius: 2rem;
+    border: #f0f0f0;
+  }
+
+  button:hover{
+    cursor: pointer;
   }
   
   /* Footer */

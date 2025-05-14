@@ -9,20 +9,41 @@
     background: #f4f4f4;
     color: #333;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    /* padding: 2rem; */
     min-height: 100vh;
   }
+  header{
+    color: white;
+    width: 100%;
+    display: flex;
+  }
+  .logo{
+    width: 100%;
+    background-color: blue;
+    height: 4rem;
+    align-items: center;
+    padding: 16px 32px;
+    max-width: 100%;
+    color: orange;
+  }
+  span{
+    color: white;
+  }
+
   .profile-container{
-    border: 1.9px solid lightblue;
+    border: 1.9px solid blue;
     min-width: 70%;
     width: 90%;
-    padding: 1rem 3rem;
+    padding: 1.5rem 2rem;
     border-radius: 15px;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
     display: flex;
+    padding: 16px 32px;
+    margin-top: 2rem;
     flex-direction: column;
 
   }

@@ -22,10 +22,9 @@
   }
   
   .admin-logo {
-    font-size: 2rem;
+    font-size: 22px;
     font-weight: bold;
     color: orange;
-    font-weight: 900;
   }
   
   .admin-logo span {
@@ -41,46 +40,40 @@
     margin-left: 20px;
     position: relative;
     border: 2px solid orange;
-    align-items: center;
-    border-radius: 0.5rem;
-    height: 1.9rem;
-    width: 1.9rem;
+    border-radius: 1.2rem;
     text-align: center;
   }
   
   .profile a,
   .profile i {
     color: #fff;
-    font-size: 1.3rem;
     text-decoration: none;
+    width: 1.9rem;
+    height: 1.9rem;
     cursor: pointer;
-    display: flex;
-  }
-  .profile i {
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
   }
   
   .menu-dropdown {
     display: none;
     position: absolute;
     right: 0;
+    top: 38px;
     background: white;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     width: 230px;
     transition: all 0.4s ease;
-    color: rgb(0, 0, 0);
+    color: black;
     padding: 1rem;
-    border: 1px solid blue;
+    border: 1px solid green;
     border-radius: 2rem;
     border-top-right-radius: 0;
   }
-
+  
   .profile:hover .menu-dropdown {
     display: block;
     top: 1.32rem;
+    right: 0;
   }
   
   .menu-dropdown ul {
@@ -90,19 +83,16 @@
   
   .menu-dropdown li {
     list-style: none;
-    margin: 0;
-    padding: 3px 0;
-    cursor: pointer;
   }
+  
   .menu-dropdown a {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 6px 10px;
-    color: rgb(0, 0, 0);
+    color: black;
     text-decoration: none;
     font-size: 16px;
-    transition: background-color 0.2s ease;
     border-radius: 6px;
     width: 100%;
   }
@@ -110,18 +100,21 @@
   .menu-dropdown a:hover {
     background-color: #f0f0f0;
     border-bottom: 1px solid blue;
+    cursor: pointer;
   }
   
-  .announcement-section {
+  /* === Lecturer Section === */
+  .lecturer-section {
     padding: 40px 30px;
   }
   
-  .announcement-section h1 {
+  .lecturer-section h1 {
     margin-bottom: 25px;
     color: #202a44;
   }
   
-  .announcement-form {
+  /* === Form === */
+  .lecturer-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -132,22 +125,22 @@
     margin-bottom: 30px;
   }
   
-  .announcement-form input,
-  .announcement-form textarea {
+  .lecturer-form input,
+  .lecturer-form textarea {
     padding: 12px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
   
-  .announcement-form textarea {
+  .lecturer-form textarea {
     resize: vertical;
     min-height: 100px;
   }
   
-  .announcement-form button {
+  .lecturer-form button {
     align-self: flex-start;
-    background-color: blue;
+    background-color: #0066cc;
     color: white;
     border: none;
     padding: 10px 18px;
@@ -160,46 +153,44 @@
     transition: 0.3s;
   }
   
-  .announcement-form button:hover {
-    background-color: #4853b8;
+  .lecturer-form button:hover {
+    background-color: #004c99;
   }
   
-  .announcement-list {
+  /* === Lecturer List === */
+  .lecturer-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
   
-  .announcement-card {
+  .lecturer-card {
     background: #fff;
     padding: 20px;
-    border-left: 5px solid blue;
-    border-radius: 1rem;
-    box-shadow: 0 0 8px rgba(0,0,0,0.05);
-    width: 100%;
-    position: relative;
+    border-left: 5px solid #0066cc;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
   }
   
-  .announcement-card h3 {
+  .lecturer-card h3 {
     color: #202a44;
     margin-bottom: 10px;
   }
   
-  .announcement-card p {
+  .lecturer-card p {
     color: #555;
-    margin-bottom: 2rem;
+    margin-bottom: 8px;
   }
   
-  .announcement-card .date {
+  .lecturer-card .date {
     font-size: 13px;
-    color: black;
+    color: #888;
     margin-top: 10px;
-    position: absolute;   /* Add these lines */
-    bottom: 15px;
-    right: 20px;
-    text-decoration: underline;
+    text-align: right;
+    display: block;
   }
   
+  /* === Footer === */
   .admin-footer {
     text-align: center;
     padding: 20px;
