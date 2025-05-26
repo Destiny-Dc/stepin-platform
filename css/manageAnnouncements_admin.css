@@ -9,107 +9,161 @@
     background-color: #f5f7fa;
   }
   
-  .admin-header {
-    background-color: blue;
-    color: #fff;
-    padding: 15px 30px;
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: blue;
+    color: white;
+    padding: 1rem 2rem;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
   }
   
-  .admin-logo {
-    font-size: 2rem;
+  .logo {
+    font-size: 1.5rem;
     font-weight: bold;
+  }
+  
+  .logo span {
+    color: #ffcc00;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.5rem;
+  }
+  
+  .dropdown {
+    position: fixed;
+    right: 2.5rem;
+    top: 1.5rem;
+  }
+  .dropdown i:hover{
     color: orange;
-    font-weight: 900;
   }
   
-  .admin-logo span {
-    color: white;
-  }
-  
-  .header-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .profile {
-    margin-left: 20px;
-    position: relative;
-    border: 2px solid orange;
-    align-items: center;
-    border-radius: 0.5rem;
-    height: 1.9rem;
-    width: 1.9rem;
-    text-align: center;
-  }
-  
-  .profile a,
-  .profile i {
-    color: #fff;
-    font-size: 1.3rem;
-    text-decoration: none;
+  .dropdown i {
+    font-size: 1.8rem;
     cursor: pointer;
-    display: flex;
-  }
-  .profile i {
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
+    color: rgb(255, 255, 255);
   }
   
-  .menu-dropdown {
+  .dropdown-menu {
     display: none;
     position: absolute;
+    top: 2.46rem;
     right: 0;
-    background: white;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    width: 230px;
-    transition: all 0.4s ease;
-    color: rgb(0, 0, 0);
-    padding: 1rem;
-    border: 1px solid blue;
-    border-radius: 2rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1.5rem;
     border-top-right-radius: 0;
-  }
-
-  .profile:hover .menu-dropdown {
-    display: block;
-    top: 1.32rem;
-  }
-  
-  .menu-dropdown ul {
-    padding: 0;
-    margin: 0;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    width: 15rem;
+    border: 1px solid blue;
   }
   
-  .menu-dropdown li {
+  .dropdown-menu li {
+    margin: 0.5rem;
     list-style: none;
-    margin: 0;
-    padding: 3px 0;
-    cursor: pointer;
-  }
-  .menu-dropdown a {
+
+    }
+  
+  .dropdown-menu li a {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 6px 10px;
+    padding: 1px 10px;
     color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: 16px;
     transition: background-color 0.2s ease;
     border-radius: 6px;
-    width: 100%;
   }
   
-  .menu-dropdown a:hover {
+  
+  .dropdown-menu li a:hover {
+    border-bottom: 1px solid blue ;
     background-color: #f0f0f0;
-    border-bottom: 1px solid blue;
+  }
+  
+  .profile button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    right: 0;
+    position: fixed;
+    top: 1.5rem;
+  }
+  .profile button i{
+    color: white;
+  } 
+  
+  .profile button i:hover{
+    color: orange;
+  }
+  
+  .profile a {
+    color: rgb(204, 80, 80);
+    text-decoration: none;
+  }
+
+
+  .logo {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: orange;
+  }
+  
+  .logo span {
+    color: white;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: blue;
+  }
+  
+  .nav-links .btn {
+    background: transparent;
+    border: 1px solid;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+  }
+  
+  .nav-links .btn:hover {
+    font-size: 15px;
+  }
+
+  .profile{
+    width: 30px;
+    height: 30px;
+  }
+  
+
+  button{
+    height: 35px;
+    width: 35px;
+    border-radius: 20px;
+  }
+  button:hover{
+    cursor: pointer;
+    color: orange;
   }
   
   .announcement-section {
@@ -158,6 +212,8 @@
     align-items: center;
     gap: 8px;
     transition: 0.3s;
+    width: auto;
+    align-self: center;
   }
   
   .announcement-form button:hover {
@@ -199,13 +255,21 @@
     right: 20px;
     text-decoration: underline;
   }
-  
-  .admin-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: blue;
+    
+  /* FOOTER */
+  footer {
+    background: blue;
     color: white;
-    font-size: 14px;
-    margin-top: 40px;
+    padding: 0.8rem;
+    text-align: center;
   }
   
+  footer .socials i {
+    margin: 0 8px;
+    cursor: pointer;
+    color: #ffffff;
+  }
+  
+  footer .socials i:hover {
+    color: orange;
+  }

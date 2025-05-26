@@ -1,56 +1,90 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  /* Body background */
   body {
-    background: linear-gradient(to bottom right, #f3e8ff, #dbeafe, #fce7f3);
+    background: linear-gradient(to right, #bcbcf1, #f3e9d1, #cad3e6);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   /* Container */
   .register-container {
-    width: 100%;
+    /* width: 50%; */
     max-width: 600px;
-    padding: 20px;
+    /* padding: 1rem; */
   }
   
   /* Form box */
   .form-box {
-    background-color: #fff;
-    border-radius: 16px;
+    border-radius: 2.5rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     padding: 32px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    border-right: 1px solid blue;
+    border-top: 1px solid blue;
+    border-bottom: 1px solid blue;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 90%;
+    /* margin: 3rem; */
+  }  
+  
+  .logo-section {
+    border-radius: 100%;
+    /* border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 2.5rem; */
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    /* border-left: 0.1px solid blue; */
+    border-top: 2px solid blue;
+    border-bottom: 2px solid blue;
+    /* border-right: 1px solid blue; */
+    height: 22rem;
+    justify-content: center;
+    align-items: center;
+    width: 22rem;
   }
   
   /* Logo and heading */
   .logo-section {
     text-align: center;
-    margin-bottom: 24px;
   }
   
   .logo {
-    width: 64px;
-    height: 64px;
+    width: 12rem;
+    height: 12rem;
     margin-bottom: 10px;
+    margin-top: 0;
+    padding-top: 0;
   }
   
   .logo-section h2 {
     font-size: 24px;
     color: #1f2937;
     font-weight: bold;
+    margin-bottom: 1rem;
   }
   
   .logo-section p {
     font-size: 14px;
     color: #6b7280;
+    margin-bottom: 2.5rem;
   }
   
   /* Input groups */
@@ -58,32 +92,44 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 16px;
+    max-width: auto;
+    width: 25rem;
     flex: 1;
-  }
+    flex-wrap: wrap;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    }
   
   .input-group label {
     font-size: 14px;
-    margin-bottom: 6px;
+    margin-bottom: 2px;
     color: #374151;
   }
   
   .input-group input {
-    padding: 10px 14px;
-    border: 1px solid #cbd5e1;
-    border-radius: 10px;
+    border: 1px solid #000000;
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
     font-size: 14px;
     transition: border-color 0.3s;
+    background-color: transparent;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 3px;
+    padding-right: 1rem;
   }
   
   .input-group input:focus {
     outline: none;
-    border-color: #60a5fa;
+    border: 2px solid #0371f8;
   }
   
   /* Row for 2 inputs side-by-side */
   .row {
     display: flex;
-    gap: 16px;
+    flex-direction: column;
   }
   
   /* Error message */
@@ -96,7 +142,7 @@
   
   /* Submit button */
   .submit-btn {
-    width: 100%;
+    width: 60%;
     background-color: #2563eb;
     color: white;
     padding: 12px;
@@ -105,6 +151,10 @@
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    justify-self: center;
+    font-weight: 500;
+    text-align-last: center;
+    display: block;
   }
   
   .submit-btn:hover {
@@ -128,3 +178,23 @@
     text-decoration: underline;
   }
   
+  @media (max-width: 900px) {
+    .input-group{
+      width: 10rem;
+    }
+    .logo-section{
+      height: 18rem;
+      font-size: 4px;
+      width: 40%;
+    }
+    .logo{
+      height: 8rem;
+      width: 8rem;
+    }
+    .logo-section p{
+      font-size: 10px;
+    }    
+    .logo-section h2{
+      font-size: 13px;
+    }
+  }

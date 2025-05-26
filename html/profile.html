@@ -7,32 +7,37 @@
   <link rel="stylesheet" href="/css/profile.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <header>
-    <div class="logo">Step<span>In</span></div>
+    <div class="logo">Step<span>In</span>
+      <div class="homepage">
+        <a href="homepage.html"><i class='bx bx-home'></i></a>
+      </div>
+    </div>
   </header>
+
   <div class="profile-container">
     <div class="border">
-        <div class="profile-image-container">
+      <div class="profile-image-container">
         <img src="/images/profile.jpg" alt="User Avatar" class="profile-image">
-        <button class="upload-btn"><i class='bx bx-edit-alt' ></i></button>
-        </div>
+        <button type="button" class="upload-btn"><i class='bx bx-edit-alt'></i></button>
+      </div>
     </div>
-    
-    <h2 class="user-name">John Doe</h2>
-    <p class="user-role">Freshman, KTU</p>
+
+    <h2 class="user-name">Loading...</h2>
+    <p class="user-role">Fetching role...</p>
 
     <div class="info-section">
-      <div class="info-row"><span class="label">Email:</span><span class="value">johndoe@example.com</span></div>
-      <div class="info-row"><span class="label">Phone:</span><span class="value">+233 20 123 4567</span></div>
-      <div class="info-row"><span class="label">Programme:</span><span class="value">BSc Computer Science</span></div>
-      <div class="info-row"><span class="label">Department:</span><span class="value">Computer Science</span></div>
-      <div class="info-row"><span class="label">Level:</span><span class="value">100</span></div>
-      <div class="info-row"><span class="label">Birthday:</span><span class="value">Jan 1, 2006</span></div>
-      <div class="info-row"><span class="label">Gender:</span><span class="value">Male</span></div>
-      <div class="info-row"><span class="label">Bio:</span><span class="value">Aspiring developer who loves coffee and code.</span></div>
+      <div class="info-row"><span class="label">Email:</span><span class="value value-email">...</span></div>
+      <div class="info-row"><span class="label">Phone:</span><span class="value value-phone">...</span></div>
+      <div class="info-row"><span class="label">Programme:</span><span class="value value-programme">...</span></div>
+      <div class="info-row"><span class="label">Department:</span><span class="value value-department">...</span></div>
+      <div class="info-row"><span class="label">Level:</span><span class="value value-level">...</span></div>
+      <div class="info-row"><span class="label">Birthday:</span><span class="value value-birthday">...</span></div>
+      <div class="info-row"><span class="label">Gender:</span><span class="value value-gender">...</span></div>
+      <div class="info-row"><span class="label">Bio:</span><span class="value value-bio">...</span></div>
     </div>
 
     <div class="actions">
@@ -40,5 +45,7 @@
       <a href="/html/welcome.html"><button class="danger">Logout</button></a>
     </div>
   </div>
+
+  <script type="module" src="/js/profile.js"></script>
 </body>
 </html>

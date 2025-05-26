@@ -1,56 +1,75 @@
-import { auth, db } from "./firebase.js";
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-import { setDoc, doc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+// register.js
 
-const form = document.getElementById("registerForm");
-const password = document.getElementById("password");
-const confirmPassword = document.getElementById("confirmPassword");
-const errorMsg = document.getElementById("passwordError");
+import { auth, db } from './firebase.js';
+import { createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+import {
+  doc,
+  setDoc,
+  serverTimestamp
+} 
+from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
-form.addEventListener("submit", async (e) => {
+import Swal from 'https://cdn.jsdelivr.net/npm/sweetalert2@11/+esm';
+
+const registerForm = document.getElementById("registerForm");
+const passwordError = document.getElementById("passwordError");
+
+registerForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  if (password.value !== confirmPassword.value) {
-    errorMsg.classList.remove("hidden");
-    return;
-  } else {
-    errorMsg.classList.add("hidden");
-  }
-
-  // Grab form data
   const firstName = document.getElementById("firstName").value.trim();
   const lastName = document.getElementById("lastName").value.trim();
   const indexNumber = document.getElementById("indexNumber").value.trim();
   const username = document.getElementById("username").value.trim();
-  const email = `${username}@stepin.com`; // You can change this format if needed
-  const userPassword = password.value;
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  if (password !== confirmPassword) {
+    passwordError.style.display = "block";
+    Swal.fire({
+      icon: 'error',
+      title: 'Passwords do not match!',
+    });
+    return;
+  } else {
+    passwordError.style.display = "none";
+  }
+
+  const email = `${indexNumber}@ktu.edu.gh`;
 
   try {
-    // Create user with Firebase Auth
-    const userCredential = await createUserWithEmailAndPassword(auth, email, userPassword);
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
-  
-    // Log user creation details
-    console.log("User created:", user.uid);
-  
-    // Store additional user details in Firestore
-    const userRef = doc(db, "users", user.uid);
-    await setDoc(userRef, {
+
+    // Save user details in Firestore
+    await setDoc(doc(db, "users", user.uid), {
       uid: user.uid,
       firstName,
       lastName,
+      email,
       indexNumber,
       username,
-      email,
-      createdAt: new Date()
+      role: "user",
+      createdAt: serverTimestamp()
     });
-  
-    console.log("User data written to Firestore");
-    alert("Registration successful!");
-    window.location.href = "/html/login.html";  // Redirect to login after successful registration
-  
-  } catch (err) {
-    console.error("Error registering user:", err);  // Improved error logging
-    alert("Registration failed: " + err.message);
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Registration Successful!',
+      text: 'You will be redirected shortly...',
+      timer: 2000,
+      showConfirmButton: false
+    });
+
+    setTimeout(() => {
+      window.location.href = "login.html";
+    }, 2200);
+  } catch (error) {
+    console.error("Error creating user:", error.message);
+    Swal.fire({
+      icon: 'error',
+      title: 'Registration Failed',
+      text: error.message
+    });
   }
-})  
+});

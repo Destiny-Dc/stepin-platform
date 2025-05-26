@@ -15,7 +15,6 @@
     flex-direction: column;
   }
   
-  /* Navbar */
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -81,13 +80,20 @@
     }
   
   .dropdown-menu li a {
-    color: rgb(22, 12, 12);
+    display: flex;
+    align-items: center;
+    padding: 1px 10px;
+    color: rgb(0, 0, 0);
     text-decoration: none;
-    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    border-radius: 6px;
   }
+  
   
   .dropdown-menu li a:hover {
     border-bottom: 1px solid blue ;
+    background-color: #f0f0f0;
   }
   
   .profile button {
@@ -148,6 +154,22 @@
   
   .nav-links .btn:hover {
     font-size: 15px;
+  }
+
+  .profile{
+    width: 30px;
+    height: 30px;
+  }
+  
+
+  button{
+    height: 35px;
+    width: 35px;
+    border-radius: 20px;
+  }
+  button:hover{
+    cursor: pointer;
+    color: orange;
   }
   
   /* Main Section */

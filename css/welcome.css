@@ -242,18 +242,18 @@
   footer {
     background: blue;
     color: white;
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
   }
   
   footer .socials i {
     margin: 0 10px;
     cursor: pointer;
-    color: orange;
+    color: white;
   }
   
   footer .socials i:hover {
-    color: white;
+    color: orange;
   }
   
 

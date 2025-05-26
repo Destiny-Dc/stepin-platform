@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Manage Announcements</title>
-  <link rel="stylesheet" href="/css/manageAnnouncements_admin.css" />
+  <title>Manage FAQs</title>
+  <link rel="stylesheet" href="/css/manageFAQs_admin.css" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-  <div class="main-container">
-    <!-- NAVBAR -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo">Step<span>In</span></div>
 
@@ -19,8 +18,8 @@
         <ul class="dropdown-menu" id="dropdown-menu">
           <li><a href="admin.html">Dashboard</a></li>
           <li><a href="videosManager-admin.html">Videos</a></li>
-          <li><a href="adminFAQs.html">FAQs</a></li>
-          <li><a href="#" style="color: orange;">Announcements</a></li>
+          <li><a href="#" style="color: orange;">FAQs</a></li>
+          <li><a href="#">Announcements</a></li>
           <li><a href="manageLecturers-Admin.html">Lecturers' Zone</a></li>
           <li><a href="wifiAdmi.html">WiFi Passwords</a></li>
         </ul>
@@ -33,34 +32,29 @@
     </ul>
   </nav>
 
-    <!-- Content -->
-    <main class="announcement-section">
-      <h1>Manage Announcements</h1>
+  <main class="faq-section">
+    <h1>user questions</h1>
 
-      <!-- Form -->
-      <form class="announcement-form">
-        <input type="text" placeholder="Announcement Title" required>
-        <textarea placeholder="Type your announcement here..." required></textarea>
-        <button type="submit"><i class='bx bx-send'></i> Post Announcement</button>
-      </form>
-
-      <!-- List of Announcements -->
-      <div class="announcement-list">
-        <div class="announcement-card">
-          <h3>Orientation Starts Monday</h3>
-          <p>All freshers are expected to report to the auditorium by 9 AM. Dress formally.</p>
-          <span class="date">Posted on: May 5, 2025</span>
-        </div>
-        <div class="announcement-card">
-          <h3>WiFi Maintenance Notice</h3>
-          <p>The campus network will be down from 11 PM tonight for routine maintenance.</p>
-          <div class="date">Posted on: May 4, 2025</div>
-        </div>
-        <!-- More cards to be populated dynamically later -->
+    <section class="submitted-questions-section">
+      <div id="submittedQuestionsList" class="submitted-questions-list">
+        <!-- Dynamic question cards will be loaded here -->
       </div>
-    </main>
+    </section>
 
-    <!-- FOOTER -->
+    <!-- Answer Modal -->
+    <div id="answerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeAnswerModal">&times;</span>
+        <h2>Answer Question</h2>
+        <form id="answerForm">
+          <textarea id="answerText" placeholder="Type your answer here..." required></textarea>
+          <button type="submit"><i class='bx bx-send'></i> Submit Answer</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 StepIn | Designed for KTU Freshmen</p>
     <div class="socials">
@@ -69,6 +63,8 @@
       <i class='bx bxl-twitter'></i>
     </div>
   </footer>
+
+  <script src="/js/adminFAQs.js" type="module"></script>
   <script>
     const menuIcon = document.getElementById("menu-icon");
     const dropdownMenu = document.getElementById("dropdown-menu");
@@ -76,6 +72,6 @@
     menuIcon.addEventListener("click", () => {
       dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
     });
-  </script> 
+  </script>
 </body>
 </html>

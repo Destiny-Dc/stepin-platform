@@ -8,21 +8,25 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo">Step<span>In</span></div>
+
     <ul class="nav-links">
       <li class="dropdown">
         <i class='bx bx-menu' id="menu-icon"></i>
         <ul class="dropdown-menu" id="dropdown-menu">
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="/html/pastVideos.html">Videos</a></li>
-            <li><a href="/html/about.html">About KTU</a></li>
-            <li><a href="/html/FAQs.html">FAQs</a></li>
-            <li><a href="/html/announcements.html">Announcements</a></li>
-            <li><a href="/html/staff.html">Lecturers' Zone</a></li>
-            <li><a href="#">WiFi Passwords</a></li>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="/html/pastVideos.html">Videos</a></li>
+          <li><a href="/html/about.html">About KTU</a></li>
+          <li><a href="/html/FAQs.html">FAQs</a></li>
+          <li><a href="/html/announcements.html">Announcements</a></li>
+          <li><a href="/html/staff.html">Lecturers' Zone</a></li>
+          <li><a href="#" style="color: orange;">WiFi Passwords</a></li>
         </ul>
       </li>
+      
+      <!-- Profile button stays out -->
       <div class="profile">
         <button><a href="profile.html"><i class='bx bx-user'></i></a></button>
       </div>
@@ -59,8 +63,22 @@
     </table>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    &copy; 2025 StepIn Platform | All rights reserved.
+    <p>&copy; 2025 StepIn | Designed for KTU Freshmen</p>
+    <div class="socials">
+      <i class='bx bxl-facebook'></i>
+      <i class='bx bxl-instagram'></i>
+      <i class='bx bxl-twitter'></i>
+    </div>
   </footer>
+  <script>
+    const menuIcon = document.getElementById("menu-icon");
+    const dropdownMenu = document.getElementById("dropdown-menu");
+  
+    menuIcon.addEventListener("click", () => {
+      dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+  </script> 
 </body>
 </html>

@@ -1,170 +1,219 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: #f4f4f4;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* padding: 2rem; */
-    min-height: 100vh;
-  }
-  header{
-    color: white;
-    width: 100%;
-    display: flex;
-  }
-  .logo{
-    width: 100%;
-    background-color: blue;
-    height: 4rem;
-    align-items: center;
-    padding: 16px 32px;
-    max-width: 100%;
-    color: orange;
-  }
-  span{
-    color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  color: orange;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo span {
+  color: white;
+  margin-left: 4px;
+}
+
+.homepage {
+  position: absolute;
+  right: 2rem;
+}
+
+.homepage a {
+  color: white;
+  font-size: 1.8rem;
+}
+
+.profile-container {
+  border: 2px solid blue;
+  background-color: white;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 900px;
+  margin-top: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.border {
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 300px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.profile-image-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid teal;
+}
+
+.upload-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: teal;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.upload-btn i {
+  font-size: 18px;
+}
+
+.upload-btn:hover {
+  background: darkcyan;
+}
+
+.user-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.user-role {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.info-section {
+  text-align: left;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.label {
+  font-weight: 600;
+  color: #444;
+}
+
+.value {
+  text-align: right;
+  color: #555;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.actions button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #ddd;
+  transition: background 0.3s ease;
+}
+
+.actions button:hover {
+  background: #ccc;
+}
+
+.actions .danger {
+  background: #ff4d4d;
+  color: white;
+}
+
+.actions .danger:hover {
+  background: #e60000;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .profile-container {
+    width: 95%;
+    padding: 1.5rem;
   }
 
-  .profile-container{
-    border: 1.9px solid blue;
-    min-width: 70%;
-    width: 90%;
-    padding: 1.5rem 2rem;
-    border-radius: 15px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    padding: 16px 32px;
-    margin-top: 2rem;
-    flex-direction: column;
-
-  }
-  .border{
-    border-radius: 15px;
-    border: 1px solid;
-    width: 80%;
-    height: 250px;
-    display: flex;
-    align-items: center;
-  }
-  .profile-image-container {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: auto;
-  }
-  .profile-image {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid teal;
-  }
-  .upload-btn {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: teal;
-    color: white;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
-  }
-  .upload-btn i{
-    font-size: 18px;
-  }
-  
-  .upload-btn:hover {
-    background: darkcyan;
-  }
-  
-  .user-name {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-top: 0.5rem;
-  }
-  
-  .user-role {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 1.5rem;
-  }
-  
   .info-section {
-    text-align: left;
-    margin-bottom: 2rem;
-    width: 80%;
+    width: 100%;
   }
-  
+
   .info-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid #eee;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .label {
-    font-weight: 600;
-    color: #444;
+
+  .label, .value {
+    width: 100%;
+    margin-bottom: 0.2rem;
   }
-  
+
   .value {
-    text-align: right;
-    color: #555;
+    text-align: left;
   }
-  
-  .actions button {
-    padding: 0.7rem 1.2rem;
-    border: none;
-    border-radius: 10px;
-    margin: 0.3rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
+
+  .profile-image-container {
+    width: 150px;
+    height: 150px;
   }
-  
-  .actions button:hover {
-    background: #eee;
+
+  .border {
+    height: auto;
   }
-  
-  .actions .danger {
-    background: #ff4d4d;
-    color: white;
-  }
-  
-  .actions .danger:hover {
-    background: #e60000;
-  }
-  
-  @media (max-width: 480px) {
-    .info-row {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .label, .value {
-      width: 100%;
-      margin-bottom: 0.2rem;
-    }
-  
-    .value {
-      text-align: left;
-    }
-  }
-  
+}

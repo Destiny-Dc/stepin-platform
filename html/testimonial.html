@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit Testimonial</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/css/testimonial.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Step<span>In</span></div>
+
+    <ul class="nav-links">
+      <li class="dropdown">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <ul class="dropdown-menu" id="dropdown-menu">
+          <li><a href="/" style="color: orange;">Home</a></li>
+          <li><a href="/html/pastVideos.html">Videos</a></li>
+          <li><a href="/html/about.html">About KTU</a></li>
+          <li><a href="/html/FAQs.html">FAQs</a></li>
+          <li><a href="/html/announcements.html">Announcements</a></li>
+          <li><a href="/html/staff.html">Lecturers' Zone</a></li>
+          <li><a href="/html/wifii.html">WiFi Passwords</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="profile">
+      <button><a href="/html/profile.html"><i class='bx bx-user'></i></a></button>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="testimonial-container">
+      <h2>Share Your Experience</h2>
+      <form id="testimonialForm">
+        <textarea id="testimonialInput" placeholder="Write your testimonial here..." required></textarea>
+        <button type="submit" class="submit-btn">Submit Testimonial</button>
+      </form>
+      <p id="statusMessage"></p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; <span id="year"></span> StepIn | Designed for KTU Freshmen</p>
+    <div class="socials">
+      <i class='bx bxl-facebook'></i>
+      <i class='bx bxl-instagram'></i>
+      <i class='bx bxl-twitter'></i>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="/js/firebase.js"></script>
+  <script src="/js/testimonial.js"></script>
+</body>
+</html>
