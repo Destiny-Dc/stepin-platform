@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Announcements</title>
+  <link rel="stylesheet" href="/css-admin/manageAnnouncements_admin.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="main-container">
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <div class="logo">Step<span>In</span></div>
+
+        <ul class="nav-links">
+          <li class="dropdown">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <ul class="dropdown-menu" id="dropdown-menu">
+              <li><a href="admin.html">Dashboard</a></li>
+              <li><a href="videosManager-admin.html">Videos</a></li>
+              <li><a href="adminFAQs.html">FAQs</a></li>
+              <li><a href="#" style="color: orange;">Announcements</a></li>
+              <li><a href="manageLecturers-Admin.html">Lecturers' Zone</a></li>
+              <li><a href="wifiAdmi.html">WiFi Passwords</a></li>
+            </ul>
+          </li>
+
+          <!-- Profile button stays out -->
+          <div class="profile">
+            <button><a href="profile.html"><i class='bx bx-user'></i></a></button>
+          </div>
+        </ul>
+      </nav>
+
+      <!-- Content -->
+      <main class="announcement-section">
+        <h1>Manage Announcements</h1>
+
+        <!-- Form -->
+        <form class="announcement-form">
+          <input type="text" placeholder="Announcement Title" required>
+          <select>
+            <option id="category" value="category">category</option>
+            <option value="academic">Academic</option>
+            <option value="events">Events</option>
+            <option value="general">General</option>
+          </select>
+          <textarea placeholder="Type your announcement here..." required></textarea>
+          <button type="submit"><i class='bx bx-send'></i> Post Announcement</button>
+        </form>
+
+        <!-- List of Announcements -->
+        <div class="announcement-list">
+          <div class="announcement-card">
+            <h3>${title}</h3>
+            <p>${content}</p>
+            <span class="date">Posted on: ${date}</span>
+            <div class="admin-actions">
+              <button class="edit-btn" data-id="${doc.id}"><i class='bx bx-edit'></i></button>
+              <button class="delete-btn" data-id="${doc.id}"><i class='bx bx-trash'></i></button>
+            </div>
+          </div>        
+          <!-- More cards to be populated dynamically later -->
+        </div>
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+        <p>&copy; 2025 StepIn | Designed for KTU Freshmen</p>
+        <div class="socials">
+          <i class='bx bxl-facebook'></i>
+          <i class='bx bxl-instagram'></i>
+          <i class='bx bxl-twitter'></i>
+        </div>
+      </footer>
+
+      <!-- Loading indicator with staircase and animated dots -->
+      <div id="loadingIndicator" class="staircase-loader" style="display:none;">
+        <div class="staircase">
+          <div class="step step1"></div>
+          <div class="step step2"></div>
+          <div class="step step3"></div>
+          <div class="step step4"></div>
+        </div>
+        <p class="loading-text">
+          Loading<span id="loadingDots"></span>
+        </p>
+      </div>
+      
+      <!-- Toast container for popups -->
+      <div id="toastContainer"></div>
+      
+      <!-- Edit Modal -->
+      <div id="editModal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Edit Announcement</h2>
+          <form id="editAnnouncementForm">
+            <input type="text" id="editTitle" placeholder="Announcement Title" required>
+            <textarea id="editContent" placeholder="Type your announcement here..." required></textarea>
+            <button type="submit">Save Changes</button>
+          </form>
+        </div>
+      </div>
+
+    </div> 
+  </div>
+
+  <script type="module" src="/js-admin/manageAnnouncements_admin.js"></script>
+  <script type="module" src="/js/firebase.js"></script>
+  <script>
+    const menuIcon = document.getElementById("menu-icon");
+    const dropdownMenu = document.getElementById("dropdown-menu");
+
+    menuIcon.addEventListener("click", () => {
+      dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+  </script> 
+</body>
+</html>

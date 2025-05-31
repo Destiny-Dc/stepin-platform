@@ -1,86 +1,106 @@
-// faq.js
-import { db } from './firebase.js';
-import { collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { db, auth } from './firebase.js';
+import {
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  where,
+  Timestamp
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-const questionForm = document.getElementById("questionForm");
-const faqItems = document.getElementById("faqItems");
+const form = document.getElementById('questionForm');
+const popup = document.getElementById('popup');
+const popupMessage = document.getElementById('popupMessage');
+const loader = document.getElementById('loader');
 
-questionForm.addEventListener("submit", async (e) => {
+// Show loader
+const showLoader = () => loader.classList.remove("hidden");
+
+// Hide loader
+const hideLoader = () => loader.classList.add("hidden");
+
+// Autofill user name and email
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    const userRef = collection(db, "users");
+
+    getDocs(query(userRef, where("uid", "==", uid)))
+      .then(snapshot => {
+        if (!snapshot.empty) {
+          const userData = snapshot.docs[0].data();
+          document.getElementById("name").value = `${userData.firstName} ${userData.lastName}`;
+          document.getElementById("email").value = user.email;
+        }
+      })
+      .catch(err => console.error("Error fetching user data:", err));
+  }
+});
+
+// Submit question
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const question = document.getElementById("question").value.trim();
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const question = document.getElementById('question').value.trim();
 
   if (!name || !email || !question) return;
 
+  showLoader();
   try {
-    await addDoc(collection(db, "submitted_questions"), {
+    await addDoc(collection(db, "faqs"), {
       name,
       email,
       question,
-      answered: false,
-      timestamp: new Date()
+      answer: "",
+      timestamp: Timestamp.now()
     });
-
-    alert("Thank you! Your question has been submitted.");
-    questionForm.reset();
+    popupMessage.textContent = "Your question has been submitted successfully!";
+    form.reset();
+    loadAnsweredFaqs(); // refresh after submission
   } catch (error) {
-    console.error("Error submitting question:", error);
-    alert("Error submitting your question.");
+    popupMessage.textContent = "There was an error submitting your question. Please try again.";
+    console.error(error);
+  } finally {
+    hideLoader();
+    popup.classList.remove("hidden");
   }
 });
 
-// ✅ Load answered FAQs only
-async function loadFAQs() {
-  const faqItems = document.getElementById("faqItems");
-  if (!faqItems) {
-    console.error("faqItems div not found");
-    return;
-  }
-
-  const q = query(collection(db, "submitted_questions"), where("answered", "==", true));
+// Load only answered FAQs
+async function loadAnsweredFaqs() {
+  const faqContainer = document.getElementById("faqItems");
+  faqContainer.innerHTML = "";
+  showLoader();
 
   try {
+    const faqRef = collection(db, "faqs");
+    const q = query(faqRef, where("answer", "!=", ""));
     const snapshot = await getDocs(q);
-    console.log("Fetched FAQs:", snapshot.docs.length);
-
-    faqItems.innerHTML = "";
 
     if (snapshot.empty) {
-      faqItems.innerHTML = "<p>No answered questions yet.</p>";
+      faqContainer.innerHTML = "<p>No answered questions yet.</p>";
       return;
     }
 
-    snapshot.forEach((doc) => {
+    snapshot.forEach(doc => {
       const data = doc.data();
-      console.log("FAQ data:", data);
-
-      const faqCard = document.createElement("div");
-      faqCard.className = "faq-card";
-      faqCard.innerHTML = `
-        <h3>${data.question}</h3>
-        <p><strong>Answer:</strong> ${data.answer || "Answer coming soon."}</p>
+      const faqDiv = document.createElement("div");
+      faqDiv.className = "faq-item";
+      faqDiv.innerHTML = `
+        <h4>Q: ${data.question}</h4>
+        <p><strong>A:</strong> ${data.answer}</p>
+        <p class="faq-meta">Asked by ${data.name}</p>
       `;
-      faqItems.appendChild(faqCard);
+      faqContainer.appendChild(faqDiv);
     });
-  } catch (err) {
-    console.error("Error loading FAQs:", err);
+  } catch (error) {
+    console.error("Failed to load FAQs:", error);
+    faqContainer.innerHTML = "<p>Failed to load FAQs.</p>";
+  } finally {
+    hideLoader();
   }
 }
 
-// 🔄 Trigger on page load
-window.onload = loadFAQs;
-
-
-import { checkAuth } from "./js/auth-check.js";
-
-checkAuth((user, userData) => {
-  if (user) {
-    console.log("Logged in user:", userData.name, user.email);
-    // You can now safely use userData.name, department, etc.
-  } else {
-    // Redirect or show "Please log in" message
-    window.location.href = "/html/login.html"; // Optional fallback
-  }
-});
+loadAnsweredFaqs();

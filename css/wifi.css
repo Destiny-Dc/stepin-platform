@@ -167,6 +167,77 @@
     cursor: pointer;
     color: orange;
   }
+
+  /* Loader Container */
+#loader {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none; /* hidden by default */
+}
+
+/* Staircase Loader - orange blocks */
+.staircase {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.step {
+  width: 20px;
+  background: #ff6600;
+  opacity: 0.3;
+  animation: stepUp 1.2s infinite;
+  transform-origin: bottom;
+  border-radius: 3px;
+}
+
+.step:nth-child(1) {
+  animation-delay: 0s;
+  height: 20px;
+}
+.step:nth-child(2) {
+  animation-delay: 0.2s;
+  height: 30px;
+}
+.step:nth-child(3) {
+  animation-delay: 0.4s;
+  height: 40px;
+}
+.step:nth-child(4) {
+  animation-delay: 0.6s;
+  height: 50px;
+}
+.step:nth-child(5) {
+  animation-delay: 0.8s;
+  height: 60px;
+}
+
+@keyframes stepUp {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.4);
+  }
+}
+
+/* Loading text */
+#loader-text {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ff6600;
+  font-weight: 600;
+  font-size: 1.2rem;
+  user-select: none;
+}
+
   
   .wifi-container {
     padding: 2rem;
@@ -178,6 +249,7 @@
   .wifi-container h2 {
     margin-bottom: 20px;
     color: blue;
+    text-align: center;
   }
   
   .wifi-table {

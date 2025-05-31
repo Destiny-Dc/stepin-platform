@@ -36,19 +36,20 @@
     
     <div class="lecturers-grid">
 
-      <!-- Lecturer Card -->
-      <div class="lecturer-card">
+      <!-- Lecturer Card Template -->
+      <div class="lecturer-card" id="lecturer-template" style="display: none;">
         <img src="/images/profile.jpg" alt="Lecturer Photo" class="profile-pic">
-        <h2>Dr. Jane Doe</h2>
-        <p class="role">Senior Lecturer, Computer Science</p>
-        <p class="department">Department of Computer Science</p>
+        <h2 class="lecturer-name">Name</h2>
+        <p class="role">Title</p>
+        <p class="department">Department</p>
         <div class="contact-info">
-          <a href="mailto:jane.doe@ktu.edu" class="contact-btn"><i class='bx bx-envelope'></i> Email</a>
-          <a href="tel:+233555123456" class="contact-btn"><i class='bx bx-phone'></i> Call</a>
+          <a href="#" class="contact-btn email" id="action"<i class='bx bx-envelope'></i> Email</a>
+          <a href="#" class="contact-btn phone" id="action"><i class='bx bx-phone'></i> Call</a>
         </div>
       </div>
 
-      <!-- Another Lecturer -->
+
+      <!-- Another Lecturer
       <div class="lecturer-card">
         <img src="/images/profile.jpg" alt="Lecturer Photo" class="profile-pic">
         <h2>Mr. John Smith</h2>
@@ -60,7 +61,7 @@
         </div>
       </div>
 
-      <!-- Another Lecturer -->
+      Another Lecturer
       <div class="lecturer-card">
         <img src="/images/profile.jpg" alt="Lecturer Photo" class="profile-pic">
         <h2>Mr. John Smith</h2>
@@ -72,7 +73,7 @@
         </div>
       </div>
 
-      <!-- Another Lecturer -->
+      Another Lecturer
       <div class="lecturer-card">
         <img src="/images/profile.jpg" alt="Lecturer Photo" class="profile-pic">
         <h2>Mr. John Smith</h2>
@@ -82,10 +83,19 @@
           <a href="mailto:john.smith@ktu.edu" class="contact-btn"><i class='bx bx-envelope'></i> Email</a>
           <a href="tel:+233555987654" class="contact-btn"><i class='bx bx-phone'></i> Call</a>
         </div>
-      </div>
+      </div> -->
 
     </div>
   </section>
+
+  <!-- Staircase Loader -->
+  <div id="page-loader" class="staircase-loader">
+    <div class="staircase">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <h3>Loading... hang on tight</h3>
+  </div>
+
 
   <!-- FOOTER -->
   <footer>
@@ -96,7 +106,7 @@
       <i class='bx bxl-twitter'></i>
     </div>
   </footer>
-  <script type="module" src="/js/welcome.js"></script>
+  <script type="module" src="/js/staff.js"></script>
   <script>
     const menuIcon = document.getElementById("menu-icon");
     const dropdownMenu = document.getElementById("dropdown-menu");

@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WiFi Passwords</title>
   <link rel="stylesheet" href="/css/wifi.css" />
+  <link rel="stylesheet" href="/css/loader.css" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -25,13 +26,23 @@
           <li><a href="#" style="color: orange;">WiFi Passwords</a></li>
         </ul>
       </li>
-      
-      <!-- Profile button stays out -->
       <div class="profile">
         <button><a href="profile.html"><i class='bx bx-user'></i></a></button>
       </div>
     </ul>
   </nav>
+
+  <!-- Loader -->
+  <div id="loader" role="alert" aria-live="assertive" aria-busy="true">
+    <div class="staircase" aria-hidden="true">
+      <div class="step"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+    </div>
+    <div id="loader-text">Loading, please hang on tight</div>
+  </div>
 
   <main class="wifi-container">
     <h2>Available WiFi Networks</h2>
@@ -41,27 +52,26 @@
           <th>Network Name</th>
           <th>Password</th>
           <th>Location</th>
+          <th>Last Updated</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>KTU-Admin</td>
-          <td>ktu@2025</td>
-          <td>Admin Block</td>
-        </tr>
-        <tr>
-          <td>KTU-Library</td>
-          <td>libAccess2025</td>
-          <td>Library</td>
-        </tr>
-        <tr>
-          <td>KTU-Labs</td>
-          <td>compLab#123</td>
-          <td>ICT Lab 2</td>
-        </tr>
+      <tbody id="wifi-table-body">
+        <!-- Rows will be dynamically inserted here -->
       </tbody>
     </table>
   </main>
+
+  <div id="loader" class="staircase-loader-container">
+    <div class="staircase-loader">
+      <span style="--i:1"></span>
+      <span style="--i:2"></span>
+      <span style="--i:3"></span>
+      <span style="--i:4"></span>
+      <span style="--i:5"></span>
+    </div>
+    <p>Fetching WiFi Passwords...</p>
+  </div>
+  
 
   <!-- FOOTER -->
   <footer>
@@ -72,13 +82,6 @@
       <i class='bx bxl-twitter'></i>
     </div>
   </footer>
-  <script>
-    const menuIcon = document.getElementById("menu-icon");
-    const dropdownMenu = document.getElementById("dropdown-menu");
-  
-    menuIcon.addEventListener("click", () => {
-      dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
-    });
-  </script> 
+  <script type="module" src="/js/wifii.js"></script>
 </body>
 </html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Lecturers</title>
+  <link rel="stylesheet" href="/css-admin/manageLecturers-admin.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="main-container">
+
+      <!-- Header -->
+      <header class="admin-header">
+        <div class="admin-logo">Step<span>In</span></div>
+        <div class="header-right">
+          <a href="/html/profile.html" class="profile"><i class='bx bx-user' style="font-size: 1.5rem;"></i></a>
+          <div class="profile" id="profileBtn">
+            <i class='bx bx-menu' style="font-size: 1.5rem;"></i>
+            <div class="menu-dropdown" id="menuDropdown">
+              <ul class="dropdown-menu">
+                <li><a href="admin.html">Dashboard</a></li>
+                <li><a href="videosManager-admin.html">Videos</a></li>
+                <li><a href="adminFAQs.html">FAQs</a></li>
+                <li><a href="manageAnnouncements_admin.html">Announcements</a></li>
+                <li><a href="#" style="color: orange;">Lecturers' Zone</a></li>
+                <li><a href="wifiAdmi.html">WiFi Passwords</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Section -->
+      <main>
+        <section class="lecturer-section">
+          <h1>Manage Lecturers</h1>
+
+          <!-- Form to Add/Edit Lecturer -->
+          <form class="lecturer-form">
+            <input type="text" name="name" placeholder="Full Name" required />
+            <input type="text" name="department" placeholder="Department" required />
+            <input type="text" name="title" placeholder="Title (e.g., Dr., Prof.)" required />
+            <input type="text" name="role" placeholder="Role (e.g., Lecturer, Senior Lecturer)" required />
+            <input type="tel" name="phone" placeholder="Phone Number" required />
+            <input type="email" name="email" placeholder="Email Address" required />
+            <textarea name="bio" placeholder="Short Bio" required></textarea>
+            <button type="submit"><i class='bx bx-user-plus'></i> Add Lecturer</button>
+          </form>
+
+          <!-- Loader -->
+          <div id="loader" class="hidden" role="alert" aria-live="assertive" aria-busy="true">
+            <div class="staircase" aria-hidden="true">
+              <div class="step"></div>
+              <div class="step"></div>
+              <div class="step"></div>
+              <div class="step"></div>
+              <div class="step"></div>
+            </div>
+            <div id="loader-text">Loading, please hang on tight</div>
+          </div>
+          
+          
+
+          <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search lecturers by name, title, or department..." />
+            <button id="searchButton"><i class='bx bx-search'></i> Search</button>
+          </div>
+                    <!-- Lecturers List -->
+          <div class="lecturers-list"></div>
+        </section>
+
+        <!-- Template for Lecturer Cards -->
+        <template id="lecturer-card-template">
+          <div class="lecturer-card">
+            <h3 class="lecturer-name"></h3>
+            <p><strong>Department:</strong> <span class="lecturer-department"></span></p>
+            <p><strong>Title:</strong> <span class="lecturer-title"></span></p>
+            <p><strong>Role:</strong> <span class="lecturer-role"></span></p>
+            <p><strong>Phone:</strong> <span class="lecturer-phone"></span></p>
+            <p><strong>Email:</strong> <span class="lecturer-email"></span></p>
+            <p><strong>Bio:</strong> <span class="lecturer-bio"></span></p>
+            <p class="date">Added on: <span class="lecturer-date"></span></p>
+            <div class="btn-group">
+              <button type="button" class="edit-btn">✏️ Edit</button>
+              <button type="button" class="delete-btn">🗑️ Delete</button>
+            </div>
+          </div>
+        </template>
+      </main>
+
+      <!-- Footer -->
+      <footer class="admin-footer">
+        <p>StepIn Admin Panel - ©2025</p>
+      </footer>
+
+    </div>
+  </div>
+  <div id="customModal" class="modal hidden">
+    <div class="modal-content">
+      <p id="modalMessage">Are you sure?</p>
+      <div class="modal-buttons">
+        <button id="modalCancelBtn">Cancel</button>
+        <button id="modalConfirmBtn">Confirm</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/js/firebase.js"></script>
+  <script type="module" src="/js-admin/manageLecturers-Admin.js"></script>
+</body>
+</html>

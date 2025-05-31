@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Manage WiFi</title>
-  <link rel="stylesheet" href="/css/manageWifi_admin.css" />
+  <link rel="stylesheet" href="/css-admin/manageWifi_admin.css" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -37,17 +37,32 @@
     <main class="wifi-section">
       <!-- WiFi Form -->
       <form class="wifi-form">
-        <label for="wifi-name">Location</label>
-        <input type="text" id="wifi-name" placeholder="e.g. KTU-Staff" required>
-        
+        <label for="wifi-location">Location</label>
+        <input type="text" id="wifi-location" placeholder="e.g. Admin Block" required>
+
         <label for="wifi-name">WiFi Name</label>
         <input type="text" id="wifi-name" placeholder="e.g. KTU-Staff" required>
-      
+
         <label for="wifi-password">Password</label>
         <input type="text" id="wifi-password" placeholder="e.g. P@ssw0rd2025" required>
-      
+
         <button type="submit"><i class='bx bx-plus'></i> Add WiFi</button>
       </form>
+
+      <div id="loader">
+        <div class="staircase-loader">
+          <div class="step step1"></div>
+          <div class="step step2"></div>
+          <div class="step step3"></div>
+          <div class="step step4"></div>
+          <div class="step step5"></div>
+        </div>
+        <p class="loader-text">Loading, please hang on tight</p>
+      </div>
+      
+
+      <!-- Notification -->
+      <div id="notification" class="notification"></div>
 
       <!-- WiFi List -->
       <div class="wifi-container">
@@ -94,67 +109,7 @@
       <p>StepIn Admin Panel - ©2025</p>
     </footer>
   </div>
-  <script>
-    const form = document.querySelector('.wifi-form');
-    const nameInput = document.getElementById('wifi-name');
-    const passwordInput = document.getElementById('wifi-password');
-    const table = document.querySelector('.wifi-table tbody');
-    const button = form.querySelector('button');
-  
-    let editRow = null;
-  
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-  
-      const name = nameInput.value.trim();
-      const password = passwordInput.value.trim();
-      const date = new Date().toLocaleDateString('en-US', {
-        month: 'short', day: 'numeric', year: 'numeric'
-      });
-  
-      if (!name || !password) return;
-  
-      if (editRow) {
-        // Update existing row
-        editRow.cells[1].textContent = name;
-        editRow.cells[2].textContent = password;
-        editRow.cells[3].textContent = date;
-        button.innerHTML = "<i class='bx bx-plus'></i> Add WiFi";
-        editRow = null;
-      } else {
-        // Add new row
-        const row = table.insertRow();
-        row.innerHTML = `
-          <td>Unknown</td>
-          <td>${name}</td>
-          <td>${password}</td>
-          <td>${date}</td>
-          <td>
-            <button class="edit-btn">Edit</button>
-            <button class="delete-btn">Delete</button>
-          </td>
-        `;
-      }
-  
-      form.reset();
-    });
-  
-    table.addEventListener('click', function (e) {
-      if (e.target.classList.contains('edit-btn')) {
-        const row = e.target.closest('tr');
-        nameInput.value = row.cells[1].textContent;
-        passwordInput.value = row.cells[2].textContent;
-        button.innerHTML = "Update WiFi";
-        editRow = row;
-      }
-  
-      if (e.target.classList.contains('delete-btn')) {
-        const row = e.target.closest('tr');
-        if (confirm("Are you sure you want to delete this WiFi record?")) {
-          row.remove();
-        }
-      }
-    });
-  </script>  
+  <script type="module" src="/js/firebase.js"></script>  
+  <script type="module" src="/js/wifi.js"></script>  
 </body>
 </html>

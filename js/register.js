@@ -35,7 +35,7 @@ registerForm.addEventListener("submit", async (e) => {
     passwordError.style.display = "none";
   }
 
-  const email = `${indexNumber}@ktu.edu.gh`;
+  const email = `${username}@ktu.edu.gh`;
 
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);

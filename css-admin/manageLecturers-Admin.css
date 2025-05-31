@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7fa;
+    height: 100%;
+  }
+
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .main-container{
+    flex: 1;
+  }
+  
+  
+  .admin-header {
+    background-color: blue;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .admin-logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: orange;
+  }
+  
+  .admin-logo span {
+    color: white;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile {
+    margin-left: 20px;
+    position: relative;
+    border: 2px solid orange;
+    border-radius: 1.2rem;
+    text-align: center;
+  }
+  
+  .profile a,
+  .profile i {
+    color: #fff;
+    text-decoration: none;
+    width: 1.9rem;
+    height: 1.9rem;
+    cursor: pointer;
+  }
+  
+  .menu-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 38px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 230px;
+    transition: all 0.4s ease;
+    color: black;
+    padding: 1rem;
+    border: 1px solid green;
+    border-radius: 2rem;
+    border-top-right-radius: 0;
+  }
+  
+  .profile:hover .menu-dropdown {
+    display: block;
+    top: 1.32rem;
+    right: 0;
+  }
+  
+  .menu-dropdown ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-dropdown li {
+    list-style: none;
+  }
+  
+  .menu-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 6px;
+    width: 100%;
+  }
+  
+  .menu-dropdown a:hover {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid blue;
+    cursor: pointer;
+  }
+
+  .search-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin: 1.5rem 0;
+  }
+  
+  .search-bar input {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 400px;
+    outline: none;
+    transition: border 0.2s;
+  }
+  
+  .search-bar input:focus {
+    border-color: #3498db;
+  }
+  
+  .search-bar button {
+    padding: 0.6rem 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.2s;
+  }
+  
+  .search-bar button:hover {
+    background-color: #2980b9;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  .modal-buttons {
+    margin-top: 1.5rem;
+  }
+  
+  .modal-buttons button {
+    margin: 0 10px;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  #modalConfirmBtn {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  #modalCancelBtn {
+    background-color: #bdc3c7;
+    color: black;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+  
+  #loader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  /* Orange staircase loader */
+  .staircase {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .step {
+    width: 20px;
+    background: #ff6600;
+    opacity: 0.3;
+    animation: stepUp 1.2s infinite;
+    transform-origin: bottom;
+    border-radius: 3px;
+  }
+  
+  .step:nth-child(1) { animation-delay: 0s; height: 20px; }
+  .step:nth-child(2) { animation-delay: 0.2s; height: 30px; }
+  .step:nth-child(3) { animation-delay: 0.4s; height: 40px; }
+  .step:nth-child(4) { animation-delay: 0.6s; height: 50px; }
+  .step:nth-child(5) { animation-delay: 0.8s; height: 60px; }
+  
+  @keyframes stepUp {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scaleY(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scaleY(1.4);
+    }
+  }
+  
+  /* Loader text styling */
+  #loader-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ff6600;
+    font-weight: 600;
+    font-size: 1.2rem;
+    user-select: none;
+  }
+  
+
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    font-weight: bold;
+    opacity: 0.95;
+    animation: fadein 0.3s ease;
+  }
+  
+  .toast.error {
+    background: #e53935;
+  }
+  
+  .toast.info {
+    background: #2196f3;
+  }
+  
+  @keyframes fadein {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to { opacity: 0.95; transform: translateX(-50%) translateY(0); }
+  }
+  
+  
+  
+  /* === Lecturer Section === */
+  .lecturer-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .lecturer-section h1 {
+    margin-bottom: 25px;
+    color: #202a44;
+    text-align: center;
+  }
+  
+  /* === Form === */
+  .lecturer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+  }
+  
+  .lecturer-form input,
+  .lecturer-form textarea {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .lecturer-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .lecturer-form button {
+    align-self: flex-start;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    align-self: center;
+  }
+  
+  .lecturer-form button:hover {
+    background-color: #004c99;
+  }
+  
+  /* === Lecturer List === */
+  .lecturer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .lecturer-card {
+    background: #fff;
+    padding: 1rem;
+    border-left: 5px solid #0066cc;
+    border-radius: 1rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+  }
+  
+  .lecturer-card h3 {
+    color: #202a44;
+    margin-bottom: 10px;
+  }
+  
+  .lecturer-card p {
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .lecturer-card .date {
+    font-size: 13px;
+    color: #888;
+    margin-top: 10px;
+    text-align: right;
+    display: block;
+  }
+  
+  /* === Footer === */
+  .admin-footer {
+    background: blue;
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  
+
+  
+  

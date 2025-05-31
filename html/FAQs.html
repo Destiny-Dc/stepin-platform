@@ -52,6 +52,13 @@
     </div>
   </section>
 
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <p id="popupMessage">...</p>
+      <button onclick="document.getElementById('popup').classList.add('hidden')">X</button>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 StepIn | Designed for KTU Freshmen</p>
@@ -61,8 +68,8 @@
       <i class='bx bxl-twitter'></i>
     </div>
   </footer>
-  <script src="/js/faq.js" type="module"></script>
-  <script type="module" src="/js/welcome.js"></script>
+  <script type="module" src="/js/faq.js"></script>
+  <script type="module" src="/js/firebase.js"></script>
   <script>
     const menuIcon = document.getElementById("menu-icon");
     const dropdownMenu = document.getElementById("dropdown-menu");
@@ -71,5 +78,14 @@
       dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
     });
   </script> 
+
+  <div id="loader" class="staircase-loader hidden">
+    <div class="bar bar1"></div>
+    <div class="bar bar2"></div>
+    <div class="bar bar3"></div>
+    <div class="bar bar4"></div>
+    <div class="bar bar5"></div>
+  </div>
+
 </body>
 </html>

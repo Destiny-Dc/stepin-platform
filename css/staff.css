@@ -194,6 +194,61 @@
   .contact-btn:hover {
     background: #008080cc;
   }
+
+  /* Staircase Loader */
+  #page-loader.staircase-loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .staircase {
+    display: flex;
+    gap: 8px;
+    margin: 2rem;
+  }
+
+  .staircase span {
+    display: block;
+    width: 10px;
+    height: 40px;
+    background: linear-gradient(orange, white, orange);
+    animation: stairBounce 1s infinite;
+  }
+
+  .staircase span:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .staircase span:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .staircase span:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .staircase span:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes stairBounce {
+    0%, 100% {
+      transform: scaleY(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scaleY(1.5);
+      opacity: 1;
+    }
+  }
+
     
     /* Footer Styles */
   footer {
