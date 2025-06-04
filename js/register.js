@@ -50,7 +50,7 @@ registerForm.addEventListener("submit", async (e) => {
       indexNumber,
       username,
       role: "user",
-      createdAt: serverTimestamp()
+      timestamp: serverTimestamp()
     });
 
     Swal.fire({

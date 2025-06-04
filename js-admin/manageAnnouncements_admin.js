@@ -44,15 +44,15 @@ async function loadAnnouncements() {
   showLoading();
   list.innerHTML = '';  // Clear the list before reloading
   try {
-    // Get announcements ordered by createdAt descending
-    const q = query(collection(db, 'announcements'), orderBy('createdAt', 'desc'));
+    // Get announcements ordered by timestamp descending
+    const q = query(collection(db, 'announcements'), orderBy('timestamp', 'desc'));
     const snapshot = await getDocs(q);
 
     snapshot.forEach(docSnap => {
-      const { title, content, createdAt } = docSnap.data();
+      const { title, content, timestamp } = docSnap.data();
 
       // Format the date nicely, fallback to 'Unknown Date'
-      const date = createdAt?.toDate().toLocaleDateString('en-US', {
+      const date = timestamp?.toDate().toLocaleDateString('en-US', {
         month: 'short', day: 'numeric', year: 'numeric'
       }) || 'Unknown Date';
 
@@ -92,7 +92,7 @@ form.addEventListener('submit', async (e) => {
       title: titleInput.value,
       content: contentInput.value,
       category: categorySelect.value, 
-      createdAt: serverTimestamp()
+      timestamp: serverTimestamp()
     });
     form.reset();
     loadAnnouncements();

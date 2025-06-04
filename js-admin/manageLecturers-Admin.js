@@ -60,7 +60,7 @@ function createLecturerCard(data, id) {
   clone.querySelector(".lecturer-phone").textContent = data.phone;
   clone.querySelector(".lecturer-email").textContent = data.email;
   clone.querySelector(".lecturer-bio").textContent = data.bio;
-  clone.querySelector(".lecturer-date").textContent = formatDate(data.createdAt);
+  clone.querySelector(".lecturer-date").textContent = formatDate(data.timestamp);
 
   clone.querySelector(".edit-btn").addEventListener("click", () => populateFormForEdit(data, id));
   clone.querySelector(".delete-btn").addEventListener("click", () => deleteLecturer(id));
@@ -93,7 +93,7 @@ async function loadLecturers() {
 // Add new lecturer
 async function addLecturer(data) {
   try {
-    await addDoc(lecturersRef, { ...data, createdAt: serverTimestamp() });
+    await addDoc(lecturersRef, { ...data, timestamp: serverTimestamp() });
     showToast("Lecturer added successfully!");
     lecturerForm.reset();
     await loadLecturers();

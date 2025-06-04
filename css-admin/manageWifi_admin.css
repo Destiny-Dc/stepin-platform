@@ -1,331 +1,372 @@
+/* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f5f7fa;
-  }
-  
-  .admin-header {
-    background-color: blue;
-    color: #fff;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  
-  .admin-logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: orange;
-  }
-  
-  .admin-logo span {
-    color: white;
-  }
-  
-  .header-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .profile {
-    margin-left: 20px;
-    position: relative;
-    border: 2px solid orange;
-    border-radius: 5rem;
-    text-align: center;
-    height: 2rem;
-    width: 2rem;
-  }
-  
-  .profile a,
-  .profile i {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .menu-dropdown {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 38px;
-    background: white;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    width: 230px;
-    transition: all 0.4s ease;
-    color: black;
-    padding: 1rem;
-    border: 1px solid green;
-    border-radius: 2rem;
-    border-top-right-radius: 0;
-  }
-  
-  .profile:hover .menu-dropdown {
-    display: block;
-    top: 1.32rem;
-  }
-  
-  .menu-dropdown ul {
-    padding: 0;
-    margin: 0;
-  }
-  
-  .menu-dropdown li {
-    list-style: none;
-  }
-  
-  .menu-dropdown a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 6px 10px;
-    color: black;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .menu-dropdown a:hover {
-    background-color: #f0f0f0;
-    border-bottom: 1px solid blue;
-    cursor: pointer;
-  }
-  
-  #loader {
-    display: none; /* Toggle this with JS */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.9);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .loader-text {
-    margin-top: 20px;
-    font-size: 1.1rem;
-    color: #333;
-    font-weight: 500;
-    font-family: "Segoe UI", sans-serif;
-    animation: fadeIn 1.5s ease-in-out infinite;
-  }
-  
-  .staircase-loader {
-    display: flex;
-    align-items: flex-end;
-    gap: 8px;
-  }
-  
-  .step {
-    width: 20px;
-    background: linear-gradient(orange, rgb(190, 219, 243), orange);
-    opacity: 0.6;
-    animation: stepUp 1.5s ease-in-out infinite;
-  }
-  
-  .step1 { height: 10px; animation-delay: 0s; }
-  .step2 { height: 20px; animation-delay: 0.15s; }
-  .step3 { height: 30px; animation-delay: 0.3s; }
-  .step4 { height: 40px; animation-delay: 0.45s; }
-  .step5 { height: 50px; animation-delay: 0.6s; }
-  
-  @keyframes stepUp {
-    0%, 100% { transform: scaleY(1); opacity: 0.6; }
-    50% { transform: scaleY(1.5); opacity: 1; }
-  }
-  
-  @keyframes fadeIn {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
-  }
-  
-  #notification {
-    display: none;
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 300px;
-    max-width: 80vw;
-    padding: 16px 24px;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: bold;
-    z-index: 10000;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-  
-  /* === WiFi Section === */
-  .wifi-section {
-    padding: 40px 30px;
-  }
-  
-  .wifi-section h1 {
-    margin-bottom: 25px;
-    color: #202a44;
-  }
-  
-  /* === WiFi Form === */
-  .wifi-form {
-    background: #ffffff;
-    padding: 30px;
-    width: 70%;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    margin-bottom: 40px;
-    max-width: 1000px;
-    justify-self: center;
-  }
-  
-  .wifi-form label {
-    font-weight: 600;
-    margin-bottom: 5px;
-    display: block;
-    color: #202a44;
-  }
-  
-  .wifi-form input[type="text"] {
-    padding: 12px 14px;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    width: 100%;
-    margin-bottom: 20px;
-    transition: border 0.3s ease;
-  }
-  
-  .wifi-form input[type="text"]:focus {
-    border-color: #0077cc;
-    outline: none;
-  }
-  
-  .wifi-form button {
-    background-color: #0077cc;
-    color: #fff;
-    padding: 12px 24px;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-    display: flex;
-    position: relative;
-    justify-self: center;
-  }
-  
-  .wifi-form button:hover {
-    background-color: #005fa3;
-  }
-  
-  
-  .wifi-form button:hover {
-    background-color: #004c99;
-  }
-  
-  /* === WiFi List === */
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f5f7fa;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .wifi-container {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .wifi-container h1 {
-    margin-bottom: 25px;
-    color: #202a44;
-    font-size: 28px;
-  }
-  
-  .wifi-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .wifi-table th,
-  .wifi-table td {
-    padding: 14px 18px;
-    border-bottom: 1px solid #2c2929;
-    text-align: center;
-    font-size: 16px;
-  }
-  
-  .wifi-table th {
-    background-color: #a5bbf1;
-    color: white;
-  }
-  
-  .wifi-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .wifi-table tr:hover {
-    background-color: #e6f7ff;
-  }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+}
 
-  .edit-btn, .delete-btn {
-    padding: 6px 10px;
-    margin: 0 3px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .edit-btn {
-    background-color: blue;
-    color: white;
-  }
-  
-  .delete-btn {
-    background-color: #e74c3c;
-    color: white;
-  }
-  
-  
-  @media (max-width: 600px) {
-    .wifi-table th,
-    .wifi-table td {
-      font-size: 14px;
-      padding: 10px;
-    }
-  }
-  
-  
-  /* === Footer === */
-  .admin-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: blue;
-    color: white;
-    font-size: 14px;
-    margin-top: 40px;
-  }
-  
+/* Header */
+.admin-header {
+  background-color: blue;
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: orange;
+}
+
+.admin-logo span {
+  color: white;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile {
+  margin-left: 20px;
+  position: relative;
+  border: 2px solid orange;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile a,
+.profile i {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+/* Dropdown Menu */
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 1.8rem;
+  right: 0;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  width: 230px;
+  padding: 1rem;
+  border: 1px solid green;
+  border-radius: 2rem;
+  border-top-right-radius: 0;
+  z-index: 10;
+}
+
+.profile:hover .menu-dropdown {
+  display: block;
+}
+
+.menu-dropdown ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-dropdown li {
+  margin-bottom: 8px;
+}
+
+.menu-dropdown a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 6px 10px;
+  display: flex;
+  border-radius: 6px;
+}
+
+.menu-dropdown a:hover {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid blue;
+}
+
+/* Loader */
+#loader {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loader-text {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #333;
+  animation: fadeIn 1.5s ease-in-out infinite;
+}
+
+.staircase-loader {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.step {
+  width: 20px;
+  background: linear-gradient(orange, rgb(190, 219, 243), orange);
+  opacity: 0.6;
+  animation: stepUp 1.5s ease-in-out infinite;
+}
+
+.step1 { height: 10px; animation-delay: 0s; }
+.step2 { height: 20px; animation-delay: 0.15s; }
+.step3 { height: 30px; animation-delay: 0.3s; }
+.step4 { height: 40px; animation-delay: 0.45s; }
+.step5 { height: 50px; animation-delay: 0.6s; }
+
+@keyframes stepUp {
+  0%, 100% { transform: scaleY(1); opacity: 0.6; }
+  50% { transform: scaleY(1.5); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Notification */
+#notification {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 300px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  background-color: #28a745;
+  color: #fff;
+  font-weight: bold;
+  z-index: 10000;
+  text-align: center;
+}
+
+/* WiFi Section */
+.wifi-section {
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wifi-section h1 {
+  margin-bottom: 25px;
+  color: #202a44;
+}
+
+/* Form */
+.wifi-form {
+  background: #ffffff;
+  padding: 30px;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.wifi-form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  color: #202a44;
+}
+
+.wifi-form input[type="text"] {
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.wifi-form button {
+  padding: 12px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  display: block;
+  margin: 0 auto;
+}
+
+.wifi-form button:hover {
+  background-color: darkblue;
+}
+
+.wifi-container{
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+h1{
+  text-align: center;
+}
+
+/* Table */
+.wifi-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.wifi-table thead {
+  background-color: blue;
+  color: white;
+}
+
+.wifi-table th,
+.wifi-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.wifi-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.wifi-table button {
+  padding: 6px 12px;
+  font-size: 14px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Modal */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 9998;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+#editWifiForm{
+  width: 100%;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: #202a44;
+  font-size: 22px;
+}
+
+.modal-content label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  color: #202a44;
+}
+
+.modal-content input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.modal-content button {
+  padding: 12px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.modal-content button:hover {
+  background-color: darkgreen;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Footer */
+.admin-footer {
+  background-color: blue;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-top: 40px;
+}

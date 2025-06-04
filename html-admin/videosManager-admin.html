@@ -45,22 +45,40 @@
         <button type="submit"><i class='bx bx-upload'></i> Upload Video</button>
       </form>
 
-      <!-- Live Preview (if needed) -->
+      <!-- Live Preview -->
       <div class="video-preview">
         <h2>Preview</h2>
         <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
       </div>
 
-      <!-- List of Videos -->
-      <div class="video-list">
-        <div class="video-card">
-          <h3>2025 Orientation - Day 1</h3>
-          <p>Introduction and welcome message from the dean.</p>
-          <span class="category">Category: Orientation</span><br />
-          <span class="date">Uploaded: May 5, 2025</span>
-        </div>
-        <!-- More video cards will go here dynamically -->
+      <div class="video-controls">
+        <input type="text" id="searchInput" placeholder="Search by title..." />
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="Orientation">Orientation</option>
+          <option value="Interview">Interview</option>
+          <!-- Add more as needed -->
+        </select>
       </div>
+
+<div class="video-list"></div>
+
+
+      <!-- List of Videos -->
+      <div class="video-list"></div>
+      
+      <div id="loader">
+        <div class="staircase-loader-container">
+          <div class="staircase-loader" style="height: 20px; animation-delay: 0s;"></div>
+          <div class="staircase-loader" style="height: 30px; animation-delay: 0.2s;"></div>
+          <div class="staircase-loader" style="height: 40px; animation-delay: 0.4s;"></div>
+          <div class="staircase-loader" style="height: 50px; animation-delay: 0.6s;"></div>
+          <div class="staircase-loader" style="height: 60px; animation-delay: 0.8s;"></div>
+        </div>
+        <p style="margin-top: 10px;">Fetching WiFi Passwords...</p>
+      </div>
+      
+      
     </main>
 
     <!-- Footer -->
@@ -69,22 +87,6 @@
     </footer>
   </div>
 
-  <script>
-    const linkInput = document.querySelector('input[placeholder="YouTube Link"]');
-    const frame = document.getElementById("videoFrame");
-
-    linkInput.addEventListener("input", () => {
-      const url = linkInput.value;
-      if (url.includes("youtube.com") || url.includes("youtu.be")) {
-        let videoId = "";
-        if (url.includes("v=")) {
-          videoId = new URL(url).searchParams.get("v");
-        } else if (url.includes("youtu.be/")) {
-          videoId = url.split("youtu.be/")[1];
-        }
-        frame.src = `https://www.youtube.com/embed/${videoId}`;
-      }
-    });
-  </script>
+  <script type="module" src="/js-admin/manageVideos.js"></script>
 </body>
 </html>

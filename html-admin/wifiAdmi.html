@@ -20,12 +20,12 @@
           <i class='bx bx-menu' style="font-size: 1.6rem; cursor: pointer;"></i>
           <div class="menu-dropdown" id="menuDropdown">
             <ul class="dropdown-menu">
-              <li><a href="homepage.html">Home</a></li>
-              <li><a href="/html/pastVideos.html">Videos</a></li>
-              <li><a href="/html/about.html">About KTU</a></li>
-              <li><a href="/html/FAQs.html">FAQs</a></li>
-              <li><a href="/html/announcements.html">Announcements</a></li>
-              <li><a href="/html/staff.html">Lecturers' Zone</a></li>
+              <li><a href="admin.html">Home</a></li>
+              <li><a href="videosManager-admin.html">Videos</a></li>
+              <li><a href="#">About KTU</a></li>
+              <li><a href="adminFAQs.html">FAQs</a></li>
+              <li><a href="manageAnnouncements_admin.html">Announcements</a></li>
+              <li><a href="manageLecturers-Admin.html">Lecturers' Zone</a></li>
               <li><a href="#" style="color: orange;">WiFi Passwords</a></li>
             </ul>
           </div>
@@ -101,6 +101,27 @@
           </tbody>
         </table>
       </div>
+
+      <!-- Edit WiFi Modal -->
+      <div id="editModal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" id="closeModal">&times;</span>
+          <h2>Edit WiFi Details</h2>
+          <form id="editWifiForm">
+            <label for="edit-location">Location</label>
+            <input type="text" id="edit-location" required>
+
+            <label for="edit-name">WiFi Name</label>
+            <input type="text" id="edit-name" required>
+
+            <label for="edit-password">Password</label>
+            <input type="text" id="edit-password" required>
+
+            <button type="submit">Update WiFi</button>
+          </form>
+        </div>
+      </div>
+
       
     </main>
 
@@ -110,6 +131,6 @@
     </footer>
   </div>
   <script type="module" src="/js/firebase.js"></script>  
-  <script type="module" src="/js/wifi.js"></script>  
+  <script type="module" src="/js-admin/wifi.js"></script>  
 </body>
 </html>

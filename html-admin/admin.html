@@ -8,80 +8,115 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="main-content">
-        <!-- NAVBAR -->
-        <nav class="navbar">
-            <div class="logo">Step<span>In</span></div>
-
-            <ul class="nav-links">
-            <li class="dropdown">
-                <i class='bx bx-menu' id="menu-icon"></i>
-                <ul class="dropdown-menu" id="dropdown-menu">
-                    <li><a href="#" style="color: orange;">Dashboard</a></li>
-                    <li><a href="videosManager-admin.html">Videos</a></li>
-                    <li><a href="adminFAQs.html">FAQs</a></li>
-                    <li><a href="manageAnnouncements_admin.html">Announcements</a></li>
-                    <li><a href="manageLecturers-Admin.html">Lecturers' Zone</a></li>
-                    <li><a href="wifiAdmi.html">WiFi Passwords</a></li>
-                </ul>
-            </li>
-            
-            <!-- Profile button stays out -->
-            <div class="profile">
-                <button><a href="profile.html"><i class='bx bx-user'></i></a></button>
-            </div>
-            </ul>
-        </nav>
+  <div class="main-content">
     
-        <!-- Dashboard Content -->
-        <div id="page-content">
-            <section id="dashboard">
-            <h1>Welcome Back, Admin! <i class='bx bxs-wink-smile'></i></h1>
-            <div class="dashboard-stats">
-                <div class="stat-card">
-                <h3>5</h3>
-                <p>Active Announcements</p>
-                </div>
-                <div class="stat-card">
-                <h3>12</h3>
-                <p>Total Videos</p>
-                </div>
-                <div class="stat-card">
-                <h3>350</h3>
-                <p>Registered Users</p>
-                </div>
-                <div class="stat-card">
-                <h3>20</h3>
-                <p>FAQs Answered</p>
-                </div>
-            </div>
-            <div class="dashboard-widgets">
-                <div class="widget-card">
-                    <h4>Recent Activity</h4>
-                    <ul>
-                    <li>New video uploaded - Orientation 101</li>
-                    <li>FAQ updated - Schedule</li>
-                    <li>Announcement posted - Welcome Note</li>
-                    </ul>
-                </div>
-                <div class="widget-card">
-                    <h4>Quick Settings</h4>
-                    <button onclick="location.href='/admin/settings.html'">Manage Settings</button>
-                </div>
-                </div>          
-            </section>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">Step<span>In</span></div>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <i class='bx bx-menu' id="menu-icon"></i>
+          <ul class="dropdown-menu" id="dropdown-menu">
+            <li><a href="#" class="active">Dashboard</a></li>
+            <li><a href="videosManager-admin.html">Videos</a></li>
+            <li><a href="adminFAQs.html">FAQs</a></li>
+            <li><a href="manageAnnouncements_admin.html">Announcements</a></li>
+            <li><a href="manageLecturers-Admin.html">Lecturers' Zone</a></li>
+            <li><a href="wifiAdmi.html">WiFi Passwords</a></li>
+          </ul>
+        </li>
+        <div class="profile">
+          <button><a href="profile.html"><i class='bx bx-user'></i></a></button>
         </div>
-    
-        <!-- Footer -->
-        <footer class="admin-footer">
-            <p>StepIn Admin Panel - ©2025</p>
-        </footer>
-    </div>  
-  <script src="/js/admin.js"></script>
+      </ul>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div id="page-content">
+      <section id="dashboard">
+
+        <!-- Motivational Quote -->
+        <div class="quote-box widget-card" style="background: #e9f5ff; border-left: 5px solid #007bff; margin-bottom: 1.5rem;">
+          <p style="font-style: italic; font-size: 1rem; margin: 0;">
+            💡 <span id="quoteText">Loading...</span>
+          </p>
+        </div>
+
+        <h1>Welcome Back, Admin! <i class='bx bxs-wink-smile'></i></h1>
+
+        <!-- Stats -->
+        <div class="dashboard-stats">
+          <div class="stat-card">
+            <h3 id="activeAnnouncements">0</h3>
+            <p>Active Announcements</p>
+          </div>
+          <div class="stat-card">
+            <h3 id="totalVids">0</h3>
+            <p>Total Videos</p>
+          </div>
+          <div class="stat-card">
+            <h3 id="totalUsers">0</h3>
+            <p>Total Users</p>
+          </div>
+          <div class="stat-card">
+            <h3 id="totalFAQs">0</h3>
+            <p>Total FAQs</p>
+          </div>
+          <div class="stat-card">
+            <h3 id="totalLecturers">0</h3>
+            <p>Total Lecturers</p>
+          </div>
+        <div class="stat-card">
+            <h3 id="totalWifi">0</h3>
+            <p>Total wifi details</p>
+          </div>
+        </div>
+
+        <!-- Widgets -->
+        <div class="dashboard-widgets">
+          <div class="widget-card">
+            <h4>Recent Activity</h4>
+            <ul>
+              <li>Loading...</li>
+            </ul>
+          </div>
+
+          <!-- Pending Tasks Summary Replacement -->
+          <div class="widget-card">
+            <h4>Pending Tasks Summary</h4>
+            <ul id="pendingTasks">
+              <li>Loading...</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Loading indicator with staircase and animated dots -->
+    <div id="loader" class="staircase-loader" style="display:none;">
+      <div class="staircase">
+        <div class="step step1"></div>
+        <div class="step step2"></div>
+        <div class="step step3"></div>
+        <div class="step step4"></div>
+        <div class="step step5"></div>
+      </div>
+      <p class="loading-text">
+        Loading<span id="loadingDots"></span>
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+      <p>StepIn Admin Panel - ©2025</p>
+    </footer>
+  </div>  
+
+  <script type="module" src="/js-admin/admin.js"></script>
   <script>
     const menuIcon = document.getElementById("menu-icon");
     const dropdownMenu = document.getElementById("dropdown-menu");
-  
+
     menuIcon.addEventListener("click", () => {
       dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
     });
