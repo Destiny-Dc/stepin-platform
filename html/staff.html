@@ -7,28 +7,11 @@
   <link rel="stylesheet" href="/css/staff.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/header.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">Step<span>In</span></div>
-
-    <ul class="nav-links">
-      <li class="dropdown">
-        <i class='bx bx-menu' id="menu-icon"></i>
-        <ul class="dropdown-menu" id="dropdown-menu">
-          <li><a href="homepage.html">Home</a></li>
-          <li><a href="/html/pastVideos.html">Videos</a></li>
-          <li><a href="/html/about.html">About KTU</a></li>
-          <li><a href="/html/FAQs.html">FAQs</a></li>
-          <li><a href="/html/announcements.html">Announcements</a></li>
-          <li><a href="#" style="color: orange;">Lecturers' Zone</a></li>
-          <li><a href="wifii.html">WiFi Passwords</a></li>
-      </ul>
-      </li>
-    </ul>
-  </nav>
+  <div data-include="/components/header.html"></div>
 
   <!-- LECTURERS SECTION -->
   <section class="lecturers-container">
@@ -47,43 +30,6 @@
           <a href="#" class="contact-btn phone" id="action"><i class='bx bx-phone'></i> Call</a>
         </div>
       </div>
-
-
-      <!-- Another Lecturer
-      <div class="lecturer-card">
-        <img src="/images/profile.jpg" alt="Lecturer Photo" class="profile-pic">
-        <h2>Mr. John Smith</h2>
-        <p class="role">Lecturer, Business Management</p>
-        <p class="department">School of Business</p>
-        <div class="contact-info">
-          <a href="mailto:john.smith@ktu.edu" class="contact-btn"><i class='bx bx-envelope'></i> Email</a>
-          <a href="tel:+233555987654" class="contact-btn"><i class='bx bx-phone'></i> Call</a>
-        </div>
-      </div>
-
-      Another Lecturer
-      <div class="lecturer-card">
-        <img src="/images/profile.jpg" alt="Lecturer Photo" class="profile-pic">
-        <h2>Mr. John Smith</h2>
-        <p class="role">Lecturer, Business Management</p>
-        <p class="department">School of Business</p>
-        <div class="contact-info">
-          <a href="mailto:john.smith@ktu.edu" class="contact-btn"><i class='bx bx-envelope'></i> Email</a>
-          <a href="tel:+233555987654" class="contact-btn"><i class='bx bx-phone'></i> Call</a>
-        </div>
-      </div>
-
-      Another Lecturer
-      <div class="lecturer-card">
-        <img src="/images/profile.jpg" alt="Lecturer Photo" class="profile-pic">
-        <h2>Mr. John Smith</h2>
-        <p class="role">Lecturer, Business Management</p>
-        <p class="department">School of Business</p>
-        <div class="contact-info">
-          <a href="mailto:john.smith@ktu.edu" class="contact-btn"><i class='bx bx-envelope'></i> Email</a>
-          <a href="tel:+233555987654" class="contact-btn"><i class='bx bx-phone'></i> Call</a>
-        </div>
-      </div> -->
 
     </div>
   </section>
@@ -107,13 +53,7 @@
     </div>
   </footer>
   <script type="module" src="/js/staff.js"></script>
-  <script>
-    const menuIcon = document.getElementById("menu-icon");
-    const dropdownMenu = document.getElementById("dropdown-menu");
-  
-    menuIcon.addEventListener("click", () => {
-      dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
-    });
-  </script> 
+  <script src="/js/header.js" defer></script>
+  <script src="/js/include.js" defer></script>
 </body>
 </html>

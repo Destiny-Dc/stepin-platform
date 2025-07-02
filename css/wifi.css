@@ -3,170 +3,19 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  html{
+    scroll-behavior: smooth;
+  }
   
   body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: #f9f9f9;
     color: #2b2929;
     height: 100vh;
+    line-height: 1.6;
   }
   
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: blue;
-    color: white;
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .logo span {
-    color: #ffcc00;
-  }
-  
-  .nav-links {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 1.5rem;
-  }
-  
-  .dropdown {
-    position: fixed;
-    right: 2.5rem;
-    top: 1.5rem;
-  }
-  .dropdown i:hover{
-    color: orange;
-  }
-  
-  .dropdown i {
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: rgb(255, 255, 255);
-  }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 2.46rem;
-    right: 0;
-    background-color: rgb(255, 255, 255);
-    border-radius: 1.5rem;
-    border-top-right-radius: 0;
-    padding: 0.5rem 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 999;
-    width: 15rem;
-    border: 1px solid blue;
-  }
-  
-  .dropdown-menu li {
-    margin: 0.5rem;
-    list-style: none;
-
-    }
-  
-  .dropdown-menu li a {
-    display: flex;
-    align-items: center;
-    padding: 1px 10px;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.2s ease;
-    border-radius: 6px;
-  }
-  
-  
-  .dropdown-menu li a:hover {
-    border-bottom: 1px solid blue ;
-    background-color: #f0f0f0;
-  }
-  
-  .profile button {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    right: 0;
-    position: fixed;
-    top: 1.5rem;
-  }
-  .profile button i{
-    color: white;
-  } 
-  
-  .profile button i:hover{
-    color: orange;
-  }
-  
-  .profile a {
-    color: rgb(204, 80, 80);
-    text-decoration: none;
-  }
-
-
-  .logo {
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: orange;
-  }
-  
-  .logo span {
-    color: white;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s;
-  }
-  
-  .nav-links a:hover {
-    color: blue;
-  }
-  
-  .nav-links .btn {
-    background: transparent;
-    border: 1px solid;
-    color: white;
-    padding: 0.4rem 1rem;
-    border-radius: 5px;
-  }
-  
-  .nav-links .btn:hover {
-    font-size: 15px;
-  }
-
-  .profile{
-    width: 30px;
-    height: 30px;
-  }
-  
-
-  button{
-    height: 35px;
-    width: 35px;
-    border-radius: 20px;
-  }
-  button:hover{
-    cursor: pointer;
-    color: orange;
-  }
 
   /* Loader Container */
   #loader {

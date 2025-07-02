@@ -7,42 +7,11 @@
   <title>FAQs – StepIn</title>
   <link rel="stylesheet" href="/css/FAQs.css" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/css/header.css">
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">Step<span>In</span></div>
 
-    <ul class="nav-links">
-      <li class="dropdown">
-        <i class='bx bx-menu' id="menu-icon"></i>
-        <ul class="dropdown-menu" id="dropdown-menu">
-          <li><a href="homepage.html">Home</a></li>
-          <li><a href="/html/pastVideos.html">Videos</a></li>
-          <li><a href="/html/about.html">About KTU</a></li>
-          <li><a href="#" style="color: orange;">FAQs</a></li>
-          <li><a href="/html/announcements.html">Announcements</a></li>
-          <li><a href="/html/staff.html">Lecturers' Zone</a></li>
-          <li><a href="wifii.html">WiFi Passwords</a></li>
-        </ul>
-      </li>
-      
-      <div class="profile">
-        <button><a href="profile.html"><i class='bx bx-user'></i></a></button>
-      </div>
-    </ul>
-  </nav>
-
-  <!-- Ask a Question Section -->
-  <section class="ask-question">
-    <h2>Ask a Question</h2>
-    <form id="questionForm">
-      <input type="text" id="name" placeholder="Your name" required />
-      <input type="email" id="email" placeholder="Your email" required />
-      <textarea id="question" placeholder="Your question..." required></textarea>
-      <button type="submit">Submit Question</button>
-    </form>
-  </section>
+  <div data-include="/components/header.html"></div>
 
   <!-- FAQs List Section -->
   <section class="faq-list">
@@ -59,6 +28,18 @@
     </div>
   </div>
 
+
+  <!-- Ask a Question Section -->
+  <section class="ask-question">
+    <h2>Ask a Question</h2>
+    <form id="questionForm">
+      <input type="text" id="name" placeholder="Your name" required />
+      <input type="email" id="email" placeholder="Your email" required />
+      <textarea id="question" placeholder="Your question..." required></textarea>
+      <button type="submit">Submit Question</button>
+    </form>
+  </section>
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 StepIn | Designed for KTU Freshmen</p>
@@ -69,16 +50,9 @@
     </div>
   </footer>
   <script type="module" src="/js/faq.js"></script>
-  <script type="module" src="/js/firebase.js"></script>
-  <script>
-    const menuIcon = document.getElementById("menu-icon");
-    const dropdownMenu = document.getElementById("dropdown-menu");
+  <script src="/js/include.js" defer></script>
+  <script src="/js/header.js" defer></script>
   
-    menuIcon.addEventListener("click", () => {
-      dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
-    });
-  </script> 
-
   <div id="loader" class="staircase-loader hidden">
     <div class="bar bar1"></div>
     <div class="bar bar2"></div>

@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showLoading();
     list.innerHTML = '';
     try {
-      const q = query(collection(db, 'announcements'), orderBy('createdAt', 'desc'));
+      const q = query(collection(db, 'announcements'), orderBy('timestamp', 'desc'));
       const snapshot = await getDocs(q);
 
       announcementsData = snapshot.docs.map(docSnap => ({
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     filtered.forEach(item => {
-      const date = item.createdAt?.toDate().toLocaleDateString('en-US', {
+      const date = item.timestamp?.toDate().toLocaleDateString('en-US', {
         month: 'long',
         day: 'numeric',
         year: 'numeric'

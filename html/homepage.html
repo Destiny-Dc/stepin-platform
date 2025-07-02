@@ -7,30 +7,10 @@
   <link rel="stylesheet" href="/css/homepage.css" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/header.css" />
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">Step<span>In</span></div>
-
-    <ul class="nav-links">
-      <li class="dropdown">
-        <i class='bx bx-menu' id="menu-icon"></i>
-        <ul class="dropdown-menu" id="dropdown-menu">
-          <li><a href="#" style="color: orange;">Home</a></li>
-          <li><a href="/html/pastVideos.html">Videos</a></li>
-          <li><a href="/html/about.html">About KTU</a></li>
-          <li><a href="/html/FAQs.html">FAQs</a></li>
-          <li><a href="/html/announcements.html">Announcements</a></li>
-          <li><a href="/html/staff.html">Lecturers' Zone</a></li>
-          <li><a href="wifii.html">WiFi Passwords</a></li>
-        </ul>
-      </li>
-        <div class="profile">
-        <button><a href="profile.html"><i class='bx bx-user'></i></a></button>
-      </div>
-    </ul>
-  </nav>
+  <div data-include="/components/header.html"></div>
 
   <!-- HERO SECTION -->
   <header class="hero">
@@ -102,13 +82,7 @@
     </div>
   </footer>
   <script type="module" src="/js/homepage.js"></script>
-  <script>
-    const menuIcon = document.getElementById("menu-icon");
-    const dropdownMenu = document.getElementById("dropdown-menu");
-  
-    menuIcon.addEventListener("click", () => {
-    dropdownMenu.classList.toggle("show");
-    });
-  </script> 
+  <script src="/js/include.js" defer></script>
+  <script src="/js/header.js" defer></script>
 </body>
 </html>

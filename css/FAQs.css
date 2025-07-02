@@ -1,163 +1,18 @@
-/* Reset basics */
-*,
-*::before,
-*::after {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+
+html{
+  scroll-behavior: smooth;
+}
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #222;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
 }
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: blue;
-  color: white;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  height: 4.38rem;
-  z-index: 1000;
-}
-
-.logo {
-  font-size: 1.5rem;
-}
-
-.logo span {
-  color: #ffcc00;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 1.5rem;
-}
-
-.dropdown {
-  position: fixed;
-  right: 2.5rem;
-  top: 1.5rem;
-}
-.dropdown i:hover{
-  color: orange;
-}
-
-.dropdown i {
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 2.79rem;
-  right: 0;
-  background-color: rgb(255, 255, 255);
-  border-radius: 1.5rem;
-  border-top-right-radius: 0;
-  padding: 0.5rem 1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 999;
-  width: 15rem;
-  border: 1px solid blue;
-}
-
-.dropdown-menu li {
-  margin: 0.5rem;
-  list-style: none;
-
-  }
-
-.dropdown-menu li a {
-  display: flex;
-  align-items: center;
-  padding: 1px 10px;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  font-size: 16px;
-  transition: background-color 0.2s ease;
-  border-radius: 6px;
-}
-
-
-.dropdown-menu li a:hover {
-  border-bottom: 1px solid blue ;
-  background-color: #f0f0f0;
-}
-
-.profile button {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  right: 0;
-  position: fixed;
-  top: 1.5rem;
-}
-.profile button i{
-  color: white;
-} 
-
-.profile button i:hover{
-  color: orange;
-}
-
-.profile a {
-  color: rgb(204, 80, 80);
-  text-decoration: none;
-}
-
-
-.logo {
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: orange;
-}
-
-.logo span {
-  color: white;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: blue;
-}
-
-.nav-links .btn {
-  background: transparent;
-  border: 1px solid;
-  color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 5px;
-}
-
-.nav-links .btn:hover {
-  font-size: 15px;
-}
-
-.profile{
-  width: 30px;
-  height: 30px;
-}
-
 
 button{
   height: 35px;
@@ -491,15 +346,111 @@ footer .socials i:hover {
 }
 
 
-@media (max-width:700px) {
+/* Responsive tweaks */
+@media screen and (max-width: 1024px) {
   .ask-question input,
   .ask-question textarea {
-    width: 30rem;
-    border-radius: 0;
+    width: 80%;
   }
 
   .ask-question button {
-    width: 18rem;
+    width: 60%;
   }
-  
+
+  .faq-list {
+    padding: 0 10px;
+  }
+
+  .faq-item {
+    max-width: 100%;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    height: auto;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+
+  .dropdown-menu {
+    width: 12rem;
+  }
+
+  .ask-question input,
+  .ask-question textarea {
+    width: 90%;
+  }
+
+  .ask-question button {
+    width: 70%;
+  }
+
+  .question-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-left {
+    margin: 0 0 15px 0;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ask-question h2,
+  .faq-list h2 {
+    font-size: 1.2rem;
+  }
+
+  .ask-question input,
+  .ask-question textarea {
+    width: 95%;
+    font-size: 0.9rem;
+  }
+
+  .ask-question button {
+    width: 80%;
+    font-size: 0.9rem;
+  }
+
+  .faq-item h4 {
+    font-size: 1rem;
+  }
+
+  .card-left img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-left h4 {
+    font-size: 14px;
+  }
+
+  .card-left p,
+  .card-footer .timestamp {
+    font-size: 12px;
+  }
+
+  .card-footer button {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
 }

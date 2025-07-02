@@ -46,14 +46,14 @@ function formatDate(timestamp) {
           const name = data.name || "N/A";
           const password = data.password || "N/A";
           const location = data.location || "N/A";
-          const updatedAt = formatDate(data.updatedAt);
+          const timestamp = formatDate(data.timestamp);
   
           const row = document.createElement("tr");
           row.innerHTML = `
             <td>${name}</td>
             <td>${password}</td>
             <td>${location}</td>
-            <td>${updatedAt}</td>
+            <td>${timestamp}</td>
           `;
           wifiTableBody.appendChild(row);
         });
@@ -65,10 +65,6 @@ function formatDate(timestamp) {
       hideLoader();
     }
   }
-menuIcon.addEventListener("click", () => {
-  dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
-});
-
 window.addEventListener("load", () => {
   loadWiFiData();
 });

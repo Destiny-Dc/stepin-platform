@@ -11,179 +11,15 @@
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     background: #f9f9f9;
-    color: #333;
+    color: #363535;
   }
   
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: blue;
-    color: white;
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .logo span {
-    color: #ffcc00;
-  }
-  
-  .nav-links {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 1.5rem;
-  }
-  .nav-links .active {
-    color: orange;
-  }
-  
-  
-  .dropdown {
-    position: fixed;
-    right: 3.3rem;
-    top: 1.5rem;
-  }
-  .dropdown i:hover{
-    color: orange;
-  }
-  
-  .dropdown i {
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: rgb(255, 255, 255);
-  }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 2.79rem;
-    right: 0;
-    background-color: rgb(255, 255, 255);
-    border-radius: 1.5rem;
-    border-top-right-radius: 0;
-    padding: 0.5rem 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 999;
-    width: 15rem;
-    border: 1px solid blue;
-  }
-  
-  .dropdown-menu li {
-    margin: 0.5rem;
-    list-style: none;
-
-    }
-  
-  .dropdown-menu li a {
-    display: flex;
-    align-items: center;
-    padding: 1px 10px;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.2s ease;
-    border-radius: 6px;
-  }
-  .dropdown-menu.show {
-    display: block;
-  }
-  
-  
-  .dropdown-menu li a:hover {
-    border-bottom: 1px solid blue ;
-    background-color: #f0f0f0;
-  }
-  
-  .profile button {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    right: 0;
-    position: fixed;
-    top: 1.4rem;
-    width: 3rem;
-  }
-  .profile button i{
-    color: white;
-  } 
-  
-  .profile button i:hover{
-    color: orange;
-  }
-  
-  .profile a {
-    color: rgb(204, 80, 80);
-    text-decoration: none;
-  }
-
-
-  .logo {
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: orange;
-  }
-  
-  .logo span {
-    color: white;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s;
-  }
-  
-  .nav-links a:hover {
-    color: blue;
-  }
-  
-  .nav-links .btn {
-    background: transparent;
-    border: 1px solid;
-    color: white;
-    padding: 0.4rem 1rem;
-    border-radius: 5px;
-  }
-  
-  .nav-links .btn:hover {
-    font-size: 15px;
-  }
-
-  .profile{
-    width: 30px;
-    height: 30px;
-  }
-
-  button{
-    height: 35px;
-    width: 35px;
-    border-radius: 20px;
-  }
-  button:hover{
-    cursor: pointer;
-    color: orange;
-  }
   /* HERO */
   .hero {
     background-image: url('/images/cover.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  
     color: white;
     padding: 5rem 2rem;
     text-align: center;
@@ -309,7 +145,7 @@
     margin: 0 auto;
     min-height: 200px;
     overflow: hidden;
-    color: #333;
+    color: #000000;
   }
 
   .testimonial {
@@ -322,7 +158,7 @@
     transform: translateY(30px);
     transition: opacity 0.5s ease, transform 0.5s ease;
     font-style: italic;
-    background: #fff;
+    background: #ffffff;
     padding: 2rem;
     border-radius: 10px;
     z-index: 999;
@@ -385,17 +221,16 @@
   h3{
     align-self: center;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
   }
   .form-content {
-    background: transparent;
+    background: white;
     padding: 20px;
     border-radius: 8px;
     width: 30rem;
     max-width: 40rem;
     position: relative;
     border: 1px solid blue;
-
   }
   
   .form-content input,
@@ -404,17 +239,21 @@
     padding: 10px;
     margin: 8px 0;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid #b3b2b2;
     background-color: white;
+  }
+
+  input:hover{
+    cursor: no-drop;
   }
   
   .close-btn {
     position: absolute;
-    top: 8px;
+    top: 2px;
     right: 12px;
-    font-size: 20px;
+    font-size: 30px;
     cursor: pointer;
-    color: white;
+    color: rgb(243, 0, 0);
   }
 
   button{
@@ -480,12 +319,7 @@
   }
   
 
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: row;
-      align-items: flex-start;
-    }
-  
+  @media (max-width: 768px) {  
   
     .hero h1 {
       font-size: 2rem;

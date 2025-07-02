@@ -1,54 +1,23 @@
-/* Base Reset */
-*,
-*::before,
-*::after {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #222;
+
+html{
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
 }
 
-/* Navbar */
-.navbar {
-  background-color: blue;
-  color: white;
-  padding: 16px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: orange;
-}
-.logo span {
-  color: white;
-}
-
-#menu-icon {
-  font-size: 1.8rem;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-}
-li{
-  list-style: none;
-  color: white;
-}
 /* Main Section */
 .live-section {
   padding: 2rem;
-  max-width: 900px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -112,6 +81,9 @@ li{
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: fit-content;
+  align-self: flex-end;
+  justify-self: right;
 }
 .comment-form button:hover {
   background-color: darkblue;
